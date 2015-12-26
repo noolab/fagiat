@@ -1,0 +1,61 @@
+<template name="userinfo">
+<div class="container">
+	<div class="row">
+	<div class="container">
+	<h2>User Info</h2><hr/>
+	<div class="right-pic">
+            <img src="/upload/{{getAvata profile.avatar}}" class="img-responsive" style="width:300px;">
+         </div>
+          <div class="right-pic1">
+            <p><strong>{{profile.username}}</strong></p>
+            <p class="blue">@: {{#each emails}}{{address}}{{/each}} <br>|| Biographie<br>WWW: Siteweb</p>
+            <!-- <span>Si le projet n'atteint pas son objectif, vous serez remboursé sans frais sur votre porte-monnaie électronique Ulule. Pour plus de détails sur le fonctionnement d'Ulule, voir la FAQ.</span> -->
+            <div class="btn">
+           <button class="btn-rd btn-oranges btn-message" >send message</button>
+          </div>
+          </div>
+     </div><hr/><h2> Project</h2><hr/>
+     <!-- project -->
+     {{#each getProjectList _id}}
+     <div class="container">
+      <div class="page-detail">
+          <div class=" row col-xs-12 col-sm-12 col-md-9 col-lg-9">
+            <h2>{{title}}</h2>
+            <p class="black">par Loish and 3dtotal Publishing</p>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3"> 
+              <div class="btn">
+               <button class="btn-rd btn-oranges" type="button">Soutenir le projet</button>
+              </div>
+          </div> 
+      </div>
+     <div class="clearfix"></div>
+     <div class="space"></div>
+      <div class="page-detail">
+        <div class="border"></div>
+        <div class="kid-img">
+           <div class=" row col-xs-12 col-sm-12 col-md-8 col-lg-8">
+           <img src="/upload/{{getImage image}}" class="img-responsive img-detail" >
+          </div>
+            <span class="col-md-2">
+              <h3 class="black no-space">31 983 $</h3>
+              <p class="balck">Sur {{goal}}</p>
+            </span>
+            <span class="col-md-2">
+             <img src="/images/green-pro.png" class="img-responsive">
+            </span>
+        </div>
+        <div class="col-md-4">
+             <h3 class="black no-space">234</h3>
+             <p class="balck">Contributeurs</p>
+        </div>
+        <div class="col-md-4">
+             <h3 class="black no-space">{{remainday createdAt}}</h3>
+             <p class="balck">Jours réstant</p>
+        </div>
+     </div>
+     </div><p>{{description}}</p><hr/>
+     {{/each}}
+     </div>
+ </div>
+</template>

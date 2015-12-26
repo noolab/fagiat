@@ -1,0 +1,87 @@
+<template name="administrative">
+<div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-sm-10 col-lg-11 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1 btn_tops">
+              <h1>Administrative issue</h1>
+              <div style="margin-top: 50px">
+                <div class="col-lg-1 col-sm-2 col-xs-12">
+                  <img src="images/ico{{count}}.png">
+                </div>
+                <div class="col-lg-2 col-sm-3 col-xs-12">
+                  <button class="btn-top center-block col-lg-12 col-sm-12 col-xs-12" type="button"><b>{{getOneCatName}}</b><img src="images/2000px-Green_tick_pointed.png" style="width: 28px;height: 30px;"></button>
+                  <p class="mod_btn pull-right"><b>Modifier</b></p>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-xs-12">
+                  <button class="btn-top center-block col-lg-12 col-sm-12 col-xs-12" type="button"><b>Basics</b><img src="images/2000px-Green_tick_pointed.png" style="width: 28px;height: 30px;"></button>
+                  <p class="mod_btn pull-right"><b>Modifier</b></p>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-xs-12">
+                  <button class="btn-top center-block col-lg-12 col-sm-12 col-xs-12" type="button"><b>Rewards</b><img src="images/2000px-Green_tick_pointed.png" style="width: 28px;height: 30px;"></button>
+                  <p class="mod_btn pull-right"><b>Modifier</b></p>
+                </div>
+                <div class="col-lg-2 col-sm-2 col-xs-12">
+                  <button class="btn-top center-block col-lg-12 col-sm-12 col-xs-12" type="button"><b>About you</b><img src="images/2000px-Green_tick_pointed.png" style="width: 28px;height: 30px;"></button>
+                  <p class="mod_btn pull-right"><b>Modifier</b></p>
+                </div>
+              </div>
+          </div>
+      <div class="col-xs-10 col-sm-10 col-lg-10 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1">
+        
+        <div class="row well">
+            <div class="col-lg-3 col-sm-3 col-xs-12">
+              <h4>Email</h4>
+            </div>
+            <div class="col-lg-7 col-sm-9 col-xs-12">
+              <input type="text" class="form-control-issue email">
+              <div style="padding: 10px 0px;">
+                  <div class="row">
+                      {{#if showEmail}}
+                          {{#each showEmail}}
+                              <a href="#" id="proId" class="btn btn-default btn-sm">{{email}} <span class="glyphicon glyphicon-remove glyphicon-remove-mail">
+                              </span> </a>
+                              <input type="hidden" id="idpro" value="{{_id}}">
+                          {{/each}}
+                      {{/if}}
+                  </div>
+                Send an email to verify my address
+                <span class="col-xs-4 col-sm-2 col-lg-2 btn btn-issue btn-add-email btn-green-dark-square btn-primary pull-right">Send</span>
+              </div>
+            </div>
+          </div>
+        <div class="row well">
+            <div class="col-lg-3 col-sm-3 col-xs-12">
+              <h4>Phone number</h4>
+            </div>
+            <div class="col-lg-7 col-sm-9 col-xs-12">
+              <input type="text" class="form-control-issue phone_num">
+              <div style="padding: 10px 0px;">
+                <div class="row">
+                      {{#if showePhoneNum}}
+                          {{#each showePhoneNum}}
+                              <a href="#" id="proId" class="btn btn-default btn-sm">{{phone_num}} <span class="glyphicon glyphicon-remove glyphicon-remove-num">
+                              </span> </a>
+                              <input type="hidden" id="idpro" value="{{_id}}">
+                          {{/each}}
+                      {{/if}}
+                  </div>
+                  Send sms to check my phone
+                <span class="col-xs-4 col-sm-2 col-lg-2 btn btn-add-phone-num btn-green-dark-square btn-issue btn-primary pull-right">Send</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-10 col-sm-12 col-xs-12 style_text">
+            <p>Exigences</p>
+            <p>The following conditions apply to all Kickstarter creators resident in France:</p>
+            <p>You are aged 18 or over.
+            You live in the following countries: France. You create a project in your name or in the name of a corporation that holds a
+            SIRET.
+            You have a mailing address and a bank account in France, and a French identity card (driving license or passport).
+            You have a credit card (credit or debit).</p>
+          </div>
+          <div class="col-lg-2 col-sm-3 col-xs-12">
+                <span class="col-xs-12 col-sm-12 col-lg-12 pull-right btn btn-green-dark-square btn-big btn-add-contact">Valider</span>
+              </div>
+        </div>
+      </div>
+    </div>
+</template>

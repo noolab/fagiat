@@ -1,0 +1,95 @@
+/* custom navbar bootstrap */
+.navbar-default{
+  background:#fff;
+}
+
+.navbar-fixed-top {
+  top: 0;
+  -webkit-box-shadow: 0px 3px 4px 3px rgba(219,219,219,0.65);
+ -moz-box-shadow: 0px 3px 4px 3px rgba(219,219,219,0.65);
+ border-bottom: 7px solid #ddd;
+}
+
+.navbar-default .navbar-brand{
+  padding:2px;
+  margin-right:25px;
+}
+.navbar-default .navbar-nav > li:hover{
+  background:none;
+}
+.navbar-default .navbar-nav > li > a{
+  color: #4d4d4d;
+  padding:30px;
+  display:block;
+  text-decoration:none;
+  text-align: center;
+  font-style: normal;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+.navbar-default .navbar-nav > li > a:hover{
+  color:#333;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover{
+  background:#333;
+  color:#fff;
+}
+
+
+
+/*search button*/
+.nav-livesearch {
+    color: #828587;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    padding: 18px 0 18px 30px;
+}
+.nav-livesearch .nav-livesearch-input[type="text"] {
+    border: 0 none;
+    font-size: 14px;
+    height: 45px;
+    padding-left: 20px;
+}
+.glyphicon-search {
+    font-size: 22px;
+}
+.glyphicon {
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-style: normal;
+    line-height: 1;
+    position: relative;
+    top: 2px;
+}
+ /*paron add style on menu dropdown on 11 16*/
+ul.dec-ul{
+  padding: 20px;
+  font-size: 17px;
+}
+ul.dec-ul li.li-amany{
+  padding: 20px;
+  font-size: 20px;
+  color: #3a71bb;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+ul.nav .dropdown .amany-dropdown{
+  padding: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #4d4d4d;
+}
+.caret {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #000000;
+}
+ul.dec-ul li.li-amany:hover{
+  background-color: #b9b9b9;
+}
+
+
+

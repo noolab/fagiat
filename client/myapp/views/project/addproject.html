@@ -1,0 +1,157 @@
+<template name="addproject1">
+    <div class="container">
+        <div id="page-les-bases">
+            <h1>Les Bases</h1>
+            <div class="row">
+                <div class="col-lg-1 col-sm-2 col-xs-12">
+                      <img src="/images/ico{{count}}.png">
+                </div>
+                <div class="col-lg-2 col-sm-3 col-xs-12">
+                    <button class="btn-top center-block col-lg-12 col-sm-12 col-xs-12" type="button"><b>{{getOneCatName}}</b><img src="images/2000px-Green_tick_pointed.png" style="width: 28px;height: 30px;"></button>
+                    <p class="mod_btn pull-right"><span class="modif">Modifier</span></p>
+                </div>
+            </div>
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Titre du projet</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <div class="col-lg-8">
+                            <label class="pro"></label>
+                            <input class="form-control " name="title" id="title" required>
+                            <div class="top-description">
+                                <p class="description">The title and the introductory text of your <br/> project should be simple, accurate and impactful</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Tags</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <div class="col-lg-8">
+                            <input class="form-control " name="tags" id="tags" required>
+                            <button type="button" id="addtags" class="btn btn-danger">Add</button>
+                            <div class="top-description">
+                                
+                                    <b id="arr">{{gettagsname}}</b>
+                                    <a href="#" class="btn btn-danger btn-xs" id="removetags">x</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Image du projet</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <p class="title">Choisissez un fichier</p>
+                        <p class="description">
+                            Veuillez sélectionner une image sur votre ordinateur.
+                            <br>Cette image sera l'image principale associée à votre projet. Choisissez-la bien !
+                            <br>JPEG, PNG, GIF ou BMP • 50 Mo maximum
+                            <br>Au moins 1024 x 768 pixels • format 4:3
+                        </p>
+                        <label class="file"></label>
+                        <div>
+                        <input type="file" id="upload" required class="btn btn-green-dark-square btn-small col-lg-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Présentation courte</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <div class="row col-lg-8">
+                            <label class="descript"></label>
+                            <textarea class="form-control" rows="3" name="description" id="description" required></textarea>
+                            <div class="top-description">
+                                <p class="description">Soyez simple et précis.<br>Comment décririez-vous votre projet en un seul Tweet ?</p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Lieu</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <div class=" row col-lg-5">
+                            <label class="locate"></label>
+                            <input class="form-control " name="location" id="location" required>
+                        </div>                        
+                    </div>
+                </div>
+            </div>        
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Durée<br>de la campagne</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <div class="row col-lg-5">
+                            <label class="date"></label>
+                            <div class="input-group datetimepicker">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                <input class="set-due-date form-control" type="text" id="datemax" required/>
+                            </div>
+                            <div class="top-description">
+                                <p class="description">De 1 à 60 jours maximum</p>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Objectif<br>de financement</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <label class="fun"></label>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <input class="form-control" name="amount" id="amount" required>
+                            </div>
+                            <div class="col-lg-2">
+                                <select class="form-control" disabled>
+                                    <option value="$">$</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="top-description">
+                            <p class="description">Votre objectif de financement correspond au montant minimum dont vous avez besoin 
+                                <br>pour mener à bien votre projet et produire toutes les récompenses (sans oublier les frais
+                                <br>pour mener à bien votre projet et produire toutes les récompenses (sans oublier les fraisde port !). Comme le financement participatif Kickstarter fonctionne sur le principe du «
+                                <br>tout ou rien », vous pouvez récolter une somme supérieure à votre objectif, mais jamais
+                                <br>inférieure. Une fois votre projet lancé, vous ne pouvez plus modifier votre objectif de
+                                <br>financement.
+                            </p>
+                            <p class="description">Si votre projet est financé intégralement, les frais suivants sont prélevés sur le total des
+                                <br>fonds à collecter : 5 % de frais Kickstarter + les frais de traitement des paiements (entre 3 
+                                <br>% et 5 %). Si votre projet n'est pas intégralement financé, il n'y a pas de frais.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btn-validate">
+                <div class="row">
+                    <button type="submit" id="insert" class="pull-right btn btn-green-dark-square btn-big col-lg-2">Validate</button>
+                </div>
+            </div>
+        </div> 
+    </div>
+</template>

@@ -1,0 +1,107 @@
+<template name="projectlist">
+    <section id="section-image">
+        <div class="container">
+            <h1>Select a Category</h1>
+            <div class="btn-section col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <button type="button" class="btn-lg btn-black col-lg-3 pull-right">Art</button>
+                    </div>
+                    <div class="col-lg-3 col-lg-offset-1">
+                        <button type="button" class="btn-lg btn-black col-lg-6 pull-right">Edition</button>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-section col-lg-12">
+                <div class="row ">
+                    <div class="col-lg-3 ">
+                        <button type="button" class="btn-lg btn-black col-lg-8 center-block">BD</button>
+                    </div>
+                    <div class="col-lg-3">
+                        <button type="button" class="btn-lg btn-black col-lg-7 center-block">Artisanat</button>
+                    </div>
+                    <div class="col-lg-3">
+                        <button type="button" class="btn-lg btn-black col-lg-8 center-block">Danse</button>
+                    </div>
+                    <div class="col-lg-3">
+                        <button type="button" class="btn-lg btn-black col-lg-8 center-block">Technologie</button>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-section col-lg-12">
+                <div class="row center-block">
+                    <div class="col-lg-3">
+                        <button type="button" class="btn-lg btn-black col-lg-8 center-block">Design</button>
+                    </div>
+                    <div class="col-lg-3">
+                        <button type="button" class="btn-lg btn-black col-lg-7 center-block">Théàtre</button>
+                    </div>
+                    <div class="col-lg-3">
+                        <button type="button" class="btn-lg btn-black col-lg-9 center-block">Cinema et Vidéo</button>
+                    </div>
+                    <div class="col-lg-3">
+                        <button type="button" class="btn-lg btn-black col-lg-8 center-block">Photographe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-section col-lg-12">  
+                <div  class="row">
+                    <div class="col-lg-3">
+                        <button type="button" class="btn-lg btn-black col-lg-7 ">Musique</button>
+                    </div>
+                    <div class="col-lg-2">
+                        <button type="button" class="btn-lg btn-black col-lg-10 ">Mode</button>
+                    </div>
+                    <div class="col-lg-2">
+                        <button type="button" class="btn-lg btn-info col-lg-11 pull-right">Gastronomie</button>
+                    </div>
+                    <div class="col-lg-2">
+                        <button type="button" class="btn-lg btn-black col-lg-10 pull-right">Jeux</button>
+                    </div>
+                    <div class="col-lg-3">
+                        <button type="button" class="btn-lg btn-black col-lg-7 pull-right">Journalisme</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="bg-ul">
+            <div class="container">
+                <div class=" col-lg-11  col-lg-offset-1">
+                    <div class="sort-by-ul">
+                        <ul class="list-sort-by">
+                            <li class="text-sort-by">Sort by:</li>
+                            <li id="basic" class="active"><a href="#">Basic</a></li>
+                            <li id="pop"><a href="#">Popular</a></li>
+                            <li id="end_date"><a href="#">End date</a></li>
+                            <li id="seniority"><a href="#">Seniority</a></li>
+                            <li id="funding"><a href="#">Funding</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="special-layout">
+        <div id="page-la-bases">
+            <div class="well-box">
+                <div class="row">
+                    {{#each getprojectlist}}
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left-box row-pad">
+                            <p class="blue">{{title}}</p>
+                            <a href="/projectdetail/{{_id}}" title="Startup One Page">
+                                <img src="/upload/{{getimage image}}" class="img-responsive center-block img-title" alt="Startup One Page" title="Startup One Page" width="266"/>
+                            </a>
+                            <p class="black-small">{{shortIt description}}</p>
+                            <p>Location: {{location}}</p>
+                            <p>Price: <b>${{goal}}</b></p>
+                            {{#each getcat}}
+                                <p>Category: <a href="/listprobycat/{{_id}}">{{name}}</a></p>
+                            {{/each}}
+                            <p>End Date: <b>{{datemax}}</b></p>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

@@ -1,0 +1,527 @@
+/*modal*/
+.popup-content{
+  position: relative;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 0px;
+  outline: 0;
+  -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+  box-shadow: 0 3px 9px rgba(0,0,0,.5);
+  padding: 0px 25px;
+}
+/*select_category*/
+.row-inline > li > a > img{
+  width: 80px;
+  height: 90px;
+
+}
+.row-inline > li {
+  font-size: 15px;
+  font-weight: bold;
+}
+.content-container .list-inline> li{
+margin-right: 0px;
+font-size: 15px;
+font-weight: bold;
+}
+  .row-num ul li:hover{
+            background-color: #19b6ef;  
+            border-radius: 5px;  
+  }
+  .row-num ul li{
+      display: inline;
+      /*margin: 0px auto 15px auto;*/
+      padding: 0px 0px 35px 0px;
+      margin: 0px 8px 30px 8px;
+  }
+  .row-num .nav-tabs>li>a{
+      border: 0px solid transparent;
+  }
+  .row-num .nav>li>a {
+      display: block;
+     /* padding: 16px 8px;*/
+      text-align: center;
+    }
+  #a{
+       padding: 33px 16px;
+      text-align: center;
+    }
+  .row-num2{
+    margin-left: 55px;
+  }
+  @media screen and (max-width: 970px){
+    .row-num2{
+      margin-left: 7px;
+    }
+  }
+
+
+  .row-num2 ul li:hover{
+            background-color: #19b6ef;  
+            border-radius: 5px;  
+  }
+  .row-num2 ul li{
+      display: inline;
+      /*margin: 0px auto 15px auto;*/
+      padding: 0px 0px 35px 0px;
+      margin: 0px 0px 30px 0px;
+  }
+  .row-num2 .nav-tabs>li>a{
+      border: 0px solid transparent;
+  }
+  .row-num2 .nav>li>a {
+      display: block;
+     /* padding: 16px 8px;*/
+      text-align: center;
+  }
+
+.row-num ul li > .icon1{
+      width: 106px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+      line-height: 180px;
+      background: url('../images/ico1.png') no-repeat center; 
+}
+.row-num ul li a:hover{
+      color: #fff;
+      background: url("../images/ico01.png") no-repeat center; 
+      
+}
+.row-num ul li.active > .icon1{
+      background:url("../images/ico01.png") no-repeat;
+}
+.row-num ul li > .icon2{
+      width: 106px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+      line-height: 180px;
+      background: url('../images/ico2.png') no-repeat center; 
+}
+.row-num ul li > .icon2:hover{
+      color: #fff;
+      background: url("../images/ico02.png") no-repeat center; 
+      
+}
+.row-num ul li.active > .icon2{
+      background-color: red;
+      background:url("../images/ico02.png") no-repeat;
+}
+.row-num ul li > .icon3{
+      width: 106px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+      line-height: 180px;
+      background: url('../images/ico3.png') no-repeat center; 
+}
+.row-num ul li > .icon3:hover{
+      color: #fff;
+      background: url("../images/ico03.png") no-repeat center; 
+      
+}
+.row-num ul li.active > .icon3{
+      background-color: red;
+      background:url("../images/ico03.png") no-repeat;
+}
+.row-num ul li > .icon4{
+      width: 106px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+      line-height: 180px;
+      background: url('../images/ico4.png') no-repeat center; 
+}
+.row-num ul li > .icon4:hover{
+      color: #fff;
+      background: url("../images/ico04.png") no-repeat center; 
+      
+}
+.row-num ul li.active > .icon4{
+      background-color: red;
+      background:url("../images/ico04.png") no-repeat;
+}
+.row-num ul li > .icon5{
+      width: 106px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+
+      line-height: 180px;
+      background: url('../images/ico5.png') no-repeat center; 
+}
+.row-num ul li > .icon5:hover{
+      color: #fff;
+      background: url("../images/ico05.png") no-repeat center; 
+      
+}
+.row-num ul li.active > .icon5{
+      background-color: red;
+      background:url("../images/ico05.png") no-repeat;
+}
+.row-num ul li > .icon6{
+      width: 115px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+      line-height: 180px;
+      background: url('../images/ico6.png') no-repeat center; 
+}
+.row-num ul li > .icon6:hover{
+      color: #fff;
+      background: url("../images/ico06.png") no-repeat center; 
+      
+}
+.row-num ul li.active > .icon6{
+      background-color: red;
+      background:url("../images/ico06.png") no-repeat;
+}
+.row-num ul li > .icon7{
+      width: 106px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+      line-height: 180px;
+      background: url('../images/ico7.png') no-repeat center; 
+}
+.row-num ul li > .icon7:hover{
+      color: #fff;
+      background: url("../images/ico07.png") no-repeat center; 
+      
+}
+.row-num ul li.active > .icon7{
+      background-color: red;
+      background:url("../images/ico07.png") no-repeat;
+}
+.row-num ul li > .icon8{
+      width: 106px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+      line-height: 180px;
+      background: url('../images/ico8.png') no-repeat center; 
+}
+.row-num ul li > .icon8:hover{
+      color: #fff;
+      background: url("../images/ico08.png") no-repeat center; 
+      
+}
+.row-num ul li.active > .icon8{
+      background-color: red;
+      background:url("../images/ico08.png") no-repeat;
+}
+.row-num2 ul li > .icon9{
+      width: 120px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+      line-height: 180px;
+      background: url('../images/ico9.png') no-repeat center; 
+}
+.row-num2 ul li > .icon9:hover{
+      color: #fff;
+      background: url("../images/ico09.png") no-repeat center; 
+      
+}
+.row-num2 ul li.active > .icon9{
+      background-color: red;
+      background:url("../images/ico09.png") no-repeat;
+}
+.row-num2 ul li > .icon10{
+      width: 120px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+      line-height: 180px;
+      background: url('../images/ico10.png') no-repeat center; 
+}
+.row-num2 ul li > .icon10:hover{
+      color: #fff;
+      background: url("../images/ico010.png") no-repeat center; 
+      
+}
+.row-num2 ul li.active > .icon10{
+      background-color: red;
+      background:url("../images/ico010.png") no-repeat;
+}
+.row-num2 ul li > .icon11{
+      width: 120px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+      line-height: 180px;
+      background: url('../images/ico11.png') no-repeat center; 
+}
+.row-num2 ul li > .icon11:hover{
+      color: #fff;
+      background: url("../images/ico011.png") no-repeat center; 
+      
+}
+.row-num2 ul li.active > .icon11{
+      background-color: red;
+      background:url("../images/ico011.png") no-repeat;
+}
+.row-num2 ul li > .icon12{
+      width: 158px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+      line-height: 180px;
+      background: url('../images/ico12.png') no-repeat center; 
+}
+.row-num2 ul li > .icon12:hover{
+      color: #fff;
+      background: url("../images/ico012.png") no-repeat center; 
+      
+}
+.row-num2 ul li.active > .icon12{
+      background-color: red;
+      background:url("../images/ico012.png") no-repeat;
+}
+.row-num2 ul li > .icon13{
+      width: 120px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+      line-height: 180px;
+      background: url('../images/ico13.png') no-repeat center; 
+}
+.row-num2 ul li > .icon13:hover{
+      color: #fff;
+      background: url("../images/ico013.png") no-repeat center; 
+      
+}
+.row-num2 ul li.active > .icon13{
+      background-color: red;
+      background:url("../images/ico013.png") no-repeat;
+}
+.row-num2 ul li > .icon14{
+      width: 120px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+      line-height: 180px;
+      background: url('../images/ico14.png') no-repeat center; 
+}
+.row-num2 ul li > .icon14:hover{
+      color: #fff;
+      background: url("../images/ico014.png") no-repeat center; 
+      
+}
+.row-num2 ul li.active > .icon14{
+      background-color: red;
+      background:url("../images/ico014.png") no-repeat;
+}
+.row-num2 ul li > .icon15{
+      width: 120px;
+      height: 89px;
+      color: #333;
+      margin: 0px auto;
+      line-height: 180px;
+      background: url('../images/ico15.png') no-repeat center; 
+}
+.row-num2 ul li > .icon15:hover{
+      color: #fff;
+      background: url("../images/ico015.png") no-repeat center; 
+      
+}
+.row-num2 ul li.active > .icon15{
+      background-color: red;
+      background:url("../images/ico015.png") no-repeat;
+}
+
+/*rewards-contributeurs*/
+
+/*.main-content{
+  background-color: #d2e5ef;
+}
+*/.btn-bottom{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  background-color: #d2e5ef;
+}
+  .btn-btn-bottom{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    background-color: #38af93;
+  }
+
+.bnt{
+  display: inline-block;
+  padding: 2px 32px;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: 4px 3px 2px #d1d1d1;
+}
+.bnt-default{
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.img1{
+  margin-left: 30px;
+  width: 50px;
+}
+.img{
+  padding: 0px 21px;
+  width: 50px;
+}
+.img2{
+  width: 47px;
+}
+.form-cont{
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #060606;
+  border-radius: 13px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  color: #555;
+  display: block;
+  font-size: 14px;
+  height: 34px;
+  line-height: 1.42857;
+  padding: 6px 12px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  width: 100%;
+}
+textarea .form-cont{
+  height: auto;
+}
+
+
+
+
+span.glyphicon-paperclip {
+    font-size: 1.2em;
+    padding: 0px 0px;
+}
+span.a img{
+  padding: 0px 15px;
+}
+span.glyphicon-trash {
+    font-size: 1.2em;
+    padding: 0px 0px;
+}
+
+
+/*testPopup*/
+.myHead{
+  background-color: #39b54a;
+  color: #fff;
+}
+.myBody{
+  
+   background: url('../images/kid90.png') no-repeat;
+   text-align: right;
+  color: #fff;
+  border: 2px solid #fff;
+  margin-top: 4px;
+
+}
+.main-popup {
+    border: 3px solid #fff;
+    width: 355px;
+}
+span .fa-icon{
+  float: right;
+  margin-bottom: 30px;
+}
+.my-ul{
+
+}
+.modal-header .my-exit{
+    margin-top: -35px;
+    margin-right: -35px;
+}
+.main-myBody > ul > li > a{
+  color: #fff;
+}
+.main-myBody > ul > li{
+  padding: 0px;
+  line-height: 20px;
+  list-style-type: none;
+
+}
+.main-myBody > ul > li > a{
+    text-decoration: none;
+}
+.top-img{
+  margin-top: 0px;
+  margin-right: 0px;
+}
+ /*report-on-contibutors*/
+}
+.inline > li {
+  margin-right: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+}
+.inline > li a {
+  color: #000;
+}
+.myhead{
+  margin-left: 20px;
+}
+@media screen and (max-width: 640px){
+  .row-num2 ul li > .icon12 {
+    background: rgba(0, 0, 0, 0) url("../images/ico12.png") no-repeat scroll center center;
+    color: #333;
+    font-size: 12px;
+    height: 89px;
+    line-height: 180px;
+    margin: 0 auto;
+    width: 133px;
+  }
+}

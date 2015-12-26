@@ -1,0 +1,48 @@
+<template name="addprojectlist">
+<div class="container">
+      <div class="row">
+      <form role="form" class="form-horizontal">
+        <div class="form-group">
+          <div class="col-xs-12">
+            <label for="title">Name</label>
+            <input class="form-control" id="name" type="text">
+          </div>     
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+          <label for="project">Project</label>
+          <select class="form-control" id="project">
+            <option value="" style="display:none;color:#eee">--Select Project--</option>
+            {{#each getpro}}
+                <option value="{{_id}}">{{title}}</option>
+            {{/each}}
+          </select>
+          <div style="margin-top:10px"></div>
+          <div class="row">
+            {{#if showpro}}
+                {{#each showpro}}
+                    <a href="#" id="proId" class="btn btn-default btn-sm">{{title}} <span class="glyphicon glyphicon-remove">
+                    </span> </a>
+                    <input type="hidden" id="idpro" value="{{_id}}">
+                {{/each}}
+            {{/if}}
+          </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+          <label for="project">Categories</label>
+          <select class="form-control" id="cat">
+          <option value="" style="display:none;color:#eee">--Select Category--</option>
+            {{#each getcat}}
+                <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+          </select>
+          </div>
+        </div>
+        <button type="button" id="addlist" class="btn btn-default">Add</button> 
+    </form>
+
+    </div>
+</div>
+</template>

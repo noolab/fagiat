@@ -1,0 +1,126 @@
+<template name="home">
+    <div class="container swiper-container">
+        {{> slide}}
+    </div>
+  <!--contaienr-->
+    <div class="container">
+    <h2>Nouveautés</h2>
+        <div class="well-box">
+        {{> allhomepro}}
+        </div>
+    </div>
+</template>
+<template name="slide">
+<div id="page-les-bases">
+{{#each projectHome}}
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
+        <h2>{{name}}</h2>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+        <a href="/allprojectlist/{{_id}}"><button class="btn btn-primary">see all</button></a>
+    </div>
+</div>
+  <div class="clearfix"></div>
+  <div class="container swiper-container">
+    <div class="row">
+    <div class="well-flow">
+      <div class="row">
+      {{#each allproject projectId}}
+      <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11 left">
+        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-6 col-lg-6 left">
+            <a href="/projectdetail/{{_id}}" title="Startup One Page">
+                <img src="/upload/{{getimage image}}" class="img-responsive img-selection"/>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 right">
+          <div class="padding-top-box">
+            <h4 class="sea">{{title}}</h4>
+            {{#each getUser ownerId}}
+            <p class="blue"><a href="/userinfo/{{_id}}">{{profile.username}}{{services.facebook.name}}</a></p>
+            {{/each}}
+            <p class="description">{{shortDescription description}}</p>
+            <div class="row">
+              <div class="col-lg-2">
+                   <img src="images/process1.png" class="img-description">
+              </div>
+              <div class="col-lg-5">
+                <p class="black">${{goal}}</p>
+                <p class="description">Financé à &nbsp; <b>42%</b></p>
+              </div>
+              <div class="col-lg-5">
+                <p class="black-blur-top">{{totalLike}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> &nbsp; <span>J-{{remainday createdAt}}</span></p>
+              </div>
+            </div>
+                
+          </div>
+
+        </div>
+
+        </div>
+        {{/each}}
+        <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 right">
+        <!-- Add Pagination -->
+        <div class="swiper-pagination mar-cycle1 swiper-pagination-clickable"><span class="swiper-pagination-bullet swiper-pagination-bullet-active btn-slide1 cycle1"></span></div>
+        <div class="swiper-pagination mar-cycle2 swiper-pagination-clickable"><span class="swiper-pagination-bullet btn-slide2 cycle2"></span></div>
+        <div class="swiper-pagination mar-cycle3 swiper-pagination-clickable"><span class="swiper-pagination-bullet btn-slide3 cycle3"></span></div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>    
+{{/each}}
+</div>
+</template>
+<template name="allhomepro">
+            <div class="row">
+                {{#each allprojects}}
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 left-box">
+                        <div class="row-pad">
+                            <p class="blue">{{title}}</p>
+                            <a href="/projectdetail/{{_id}}" title="Startup One Page">
+                                <img src="/upload/{{getimage image}}" class="img-responsive center-block img-title" alt="Startup One Page" title="Startup One Page" width="266"/>
+                            </a>
+                            <p class="black-small">{{shortIt description}}</p>
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    {{#each getUser ownerId}}
+                                        <p class="blue"><a href="/userinfo/{{_id}}">{{profile.username}}{{services.facebook.name}}</a></p>
+                                    {{/each}}
+                                </div>
+                                {{#each getcat}}
+                                    <div class="col-lg-5 pull-right">
+                                        <a href="/listprobycat/{{_id}}"><p class="sea">{{name}}</p></a>
+                                    </div>
+                                {{/each}} 
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <img src="images/process1.png" class="img-responsive"> 
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="clearfix-on-row">
+                                       <p class="black">${{goal}}</p>
+                                       <p class="black">44%</p>
+                                    </div>                                </div>
+                                <div class="col-lg-7">
+                                    <p class="black-blur-top pull-right{{getstatus}}  likeUnlike" aria-hidden="true" style="color:black;">{{totalLike}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp; <span>J-{{remainday createdAt}}</span></p>
+                                    <p class="pull-right"><span>{{datemax}}</span></p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+            <div class="clearfix"></div>
+            <div class="row text-center">
+                <!-- <button type="button" class="btn btn-outline btn-info btn-lg">See More</button> -->
+                    {{#if Template.subscriptionsReady}}
+                      {{#if hasMorePosts}}
+                        <a class="load-more btn btn-primary center-block" >Load More</a>
+                      {{/if}}
+                    {{else}}
+                      <div class="loading">{{>spinner}}</div>
+                    {{/if}}
+            </div>
+</template>

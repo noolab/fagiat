@@ -1,0 +1,517 @@
+<template name="project">
+  <!-- <section id="section-image">
+    <div class="container">
+      <h1>Select a Category</h1>
+      <div class="btn-section col-lg-12">
+        <div class="row">
+          <div class="col-lg-6">
+            <button type="button" class="btn-lg btn-black col-lg-3 pull-right">Art</button>
+          </div>
+          <div class="col-lg-3 col-lg-offset-1">
+            <button type="button" class="btn-lg btn-black col-lg-6 pull-right">Edition</button>
+          </div>
+        </div>
+      </div>
+      <div class="btn-section col-lg-12">
+        <div class="row ">
+          <div class="col-lg-3 ">
+            <button type="button" class="btn-lg btn-black col-lg-8 center-block">BD</button>
+          </div>
+          <div class="col-lg-3">
+            <button type="button" class="btn-lg btn-black col-lg-7 center-block">Artisanat</button>
+          </div>
+          <div class="col-lg-3">
+            <button type="button" class="btn-lg btn-black col-lg-8 center-block">Danse</button>
+          </div>
+          <div class="col-lg-3">
+            <button type="button" class="btn-lg btn-black col-lg-8 center-block">Technologie</button>
+          </div>
+        </div>
+      </div>
+      <div class="btn-section col-lg-12">
+        <div class="row center-block">
+          <div class="col-lg-3">
+            <button type="button" class="btn-lg btn-black col-lg-8 center-block">Design</button>
+          </div>
+          <div class="col-lg-3">
+            <button type="button" class="btn-lg btn-black col-lg-7 center-block">Théàtre</button>
+          </div>
+          <div class="col-lg-3">
+            <button type="button" class="btn-lg btn-black col-lg-9 center-block">Cinema et Vidéo</button>
+          </div>
+          <div class="col-lg-3">
+            <button type="button" class="btn-lg btn-black col-lg-8 center-block">Photographe</button>
+          </div>
+        </div>
+      </div>
+      <div class="btn-section col-lg-12">  
+        <div  class="row">
+          <div class="col-lg-3">
+            <button type="button" class="btn-lg btn-black col-lg-7 ">Musique</button>
+          </div>
+          <div class="col-lg-2">
+            <button type="button" class="btn-lg btn-black col-lg-10 ">Mode</button>
+          </div>
+          <div class="col-lg-2">
+            <button type="button" class="btn-lg btn-info col-lg-11 pull-right">Gastronomie</button>
+          </div>
+          <div class="col-lg-2">
+            <button type="button" class="btn-lg btn-black col-lg-10 pull-right">Jeux</button>
+          </div>
+          <div class="col-lg-3">
+            <button type="button" class="btn-lg btn-black col-lg-7 pull-right">Journalisme</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="bg-ul">
+        <div class="container">
+        <div class=" col-lg-11  col-lg-offset-1">
+          <div class="sort-by-ul">
+              <ul class="list-sort-by">
+                    <li class="text-sort-by">Sort by:</li>
+                    <li class="active" id="basic"><a href="#">Basic</a></li>
+                    <li id="popular"><a href="#">Popular</a></li>
+                    <li id="end_date"><a href="#">End date</a></li>
+                    <li id="seniority"><a href="#">Seniority</a></li>
+                    <li id="funding"><a href="#">Funding</a></li>
+              </ul>
+          </div>
+        </div>
+        </div>
+    </div>
+  </section> -->
+  <!-- start section -->
+  <section id="section-image">
+    <!-- content slider -->
+    <div class="menu-slider">
+      
+    <div class="container">
+      <div class="con-all">
+        <ul class="list-inline" id="flexiselDemo"> 
+          {{#each getallcategories}}
+          <li><button type="button" class="btn-lg eachCat_{{_id}} eachCat btn-black">{{name}}</button></li>   
+          {{/each}}
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    </div> <!-- menu-slider -->
+    <!-- end content slider-->
+    <div id="bg-ul" class="bord-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 col-lg-offset-1 bord-right">
+            <div class="control-ul19">
+              <div class="sort-by-ul">
+                <ul class="list-sort-by">
+                  <li class="text-sort-by"><a href="">Sort by</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 se-me">
+            <div class="control-ul19">
+              <div class="sort-by-ul">
+                <ul class="list-sort-by">
+                  <li class="text-sort-by" id="basic"><a href="#"><span class="co-blue">Basic</span></a></li>
+                  <li class="text-sort-by" id="popular"><a href="#">Popularité</a></li>
+                  <li class="text-sort-by" id="end_date"><a href="#">Date de fin</a></li>
+                  <li class="text-sort-by" id="seniority"><a href="#">Ancienneté</a></li>
+                  <li class="text-sort-by" id="funding"><a href="#">Financement</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end section -->
+
+    <div class="container" style="background-color: #e1eaec;">
+        <div id="page-les-bases">
+        <!-- start slide -->
+        {{#each projectDiscover}}
+        <h2>Our selection is: {{name}}</h2>
+          <div class="clearfix"></div>
+          <div class="container swiper-container">
+            <div class="row">
+            <div class="well-flow">
+              <div class="row">
+              {{#each allproject projectId}}
+              <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11 left">
+                <div class="col-xs-12 col-sm-12 col-sm-12 col-md-6 col-lg-6 left">
+                    <a href="/projectdetail/{{_id}}" title="Startup One Page">
+                        <img src="/upload/{{getimage image}}" class="img-responsive img-selection"/>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 right">
+                  <div class="padding-top-box">
+                    <h4 class="sea">{{title}}</h4>
+                    {{#each getUser ownerId}}
+                    <p class="blue"><a href="/userinfo/{{_id}}">{{profile.username}}{{services.facebook.name}}</a></p>
+                    {{/each}}
+                    <p class="description">{{shortDescription description}}</p>
+                    <div class="row">
+                      <div class="col-lg-2">
+                           <img src="images/process1.png" class="img-description">
+                      </div>
+                      <div class="col-lg-5">
+                        <p class="black">${{goal}}</p>
+                        <p class="description">Financé à &nbsp; <b>42%</b></p>
+                      </div>
+                      <div class="col-lg-5">
+                        <p class="black-blur-top">{{totalLike}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> &nbsp; <span>J-{{remainday createdAt}}</span></p>
+                      </div>
+                    </div>
+                        
+                  </div>
+
+                </div>
+
+                </div>
+                {{/each}}
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 right">
+                <!-- Add Pagination -->
+                <div class="swiper-pagination mar-cycle1 swiper-pagination-clickable"><span class="swiper-pagination-bullet swiper-pagination-bullet-active btn-slide1 cycle1"></span></div>
+                <div class="swiper-pagination mar-cycle2 swiper-pagination-clickable"><span class="swiper-pagination-bullet btn-slide2 cycle2"></span></div>
+                <div class="swiper-pagination mar-cycle3 swiper-pagination-clickable"><span class="swiper-pagination-bullet btn-slide3 cycle3"></span></div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>    
+        {{/each}}
+<!-- end slide -->
+
+          <div class="box-title">
+            <div class="col-lg-12" style="text-align: center;">
+                  <div class="col-lg-4">
+                    <h2>Nouveautés</h2>
+                  </div>
+                  <div class="col-lg-4">
+                    <h2>Tendances</h2>
+                  </div>
+                  <div class="col-lg-4">
+                    <h2>Meilleurs likes</h2>
+                  </div>
+              </div>
+          </div>
+        
+          <div class="well-box">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 right-box">
+                <div class="row-pad">
+                {{#each getprobydate}}
+                    <p class="blue">{{title}}</p>
+                    <a href="/projectdetail/{{_id}}" title="Startup One Page">
+                        <img src="/upload/{{getimage image}}" class="img-responsive center-block img-title" alt="Startup One Page" title="Startup One Page" width="266"/>
+                    </a>
+                    <p class="black-small">{{shortIt description}}</p>
+                    <!-- <p>{{createdAt}}</p> -->
+                  <div class="row">
+                    <div class="col-lg-7">
+                        {{#each getUser ownerId}}
+                            <p class="blue"><a href="/userinfo/{{_id}}">{{profile.username}}{{services.facebook.name}}</a></p>
+                        {{/each}}                      
+                    </div>
+                    <div class="col-lg-5">
+                        {{#each getcat}}
+                            <p><a href="/listprobycat/{{_id}}">{{name}}</a></p>
+                        {{/each}}
+                    </div> 
+                  </div>
+                    <div class="row">
+                      <div class="col-lg-3">
+                          <img src="images/process1.png" class="img-responsive">    
+                      </div>
+                      <div class="col-lg-2">
+                            <div class="clearfix-on-row">
+                               <p class="black">${{goal}}</p>
+                               <p class="black">44%</p>
+                            </div>
+                      </div>
+                      <div class="col-lg-7">
+                          <p class="black-blur-top pull-right">{{totalLike}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp; <span>J-{{remainday createdAt}}</span></p>  
+                          <p class="pull-right"><span>{{datemax}}</span></p>           
+                      </div>
+                    </div>
+                {{/each}}
+                </div>
+              </div>
+              <!-- donation -->
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 right-box">
+                <div class="row-pad">
+                {{#each getprobydonate}}
+                    <p class="blue">{{title}}</p>
+                    <a href="/projectdetail/{{_id}}" title="Startup One Page">
+                        <img src="/upload/{{getimage image}}" class="img-responsive center-block img-title" alt="Startup One Page" title="Startup One Page" width="266"/>
+                    </a>
+                    <p class="black-small">{{shortIt description}}</p>
+                    <!-- <p>{{createdAt}}</p> -->
+                  <div class="row">
+                    <div class="col-lg-7">
+                        {{#each getUser ownerId}}
+                            <p class="blue"><a href="/userinfo/{{_id}}">{{profile.username}}{{services.facebook.name}}</a></p>
+                        {{/each}}
+                    </div>
+                    <div class="col-lg-5">
+                        {{#each getcat}}
+                            <p><a href="/listprobycat/{{_id}}">{{name}}</a></p>
+                        {{/each}}
+                    </div> 
+                  </div>
+                    <div class="row">
+                      <div class="col-lg-3">
+                          <img src="images/process1.png" class="img-responsive">    
+                      </div>
+                      <div class="col-lg-2">
+                            <div class="clearfix-on-row">
+                               <p class="black">${{goal}}</p>
+                               <p class="black">44%</p>
+                            </div>
+                      </div>
+                      <div class="col-lg-7">
+                          <p class="black-blur-top pull-right">{{totalLike}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp; <span>J-{{remainday createdAt}}</span></p>
+                            <p class="pull-right"><span>{{datemax}}</span></p>                   
+                      </div>
+                    </div>
+                {{/each}}
+                </div>
+              </div>
+            <!-- get project by most like -->
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 right-box">
+                <div class="row-pad">
+                {{#each getprobylike}}
+                    <p class="blue">{{title}}</p>
+                    <a href="/projectdetail/{{_id}}" title="Startup One Page">
+                        <img src="/upload/{{getimage image}}" class="img-responsive center-block img-title" alt="Startup One Page" title="Startup One Page" width="266"/>
+                    </a>
+                    <p class="black-small">{{shortIt description}}</p>
+                    <!-- <p>{{createdAt}}</p> -->
+                  <div class="row">
+                    <div class="col-lg-7">
+                        {{#each getUser ownerId}}
+                            <p class="blue"><a href="/userinfo/{{_id}}">{{profile.username}}{{services.facebook.name}}</a></p>
+                        {{/each}}                 
+                    </div>
+                    <div class="col-lg-5">
+                        {{#each getcat}}
+                            <p><a href="/listprobycat/{{_id}}">{{name}}</a></p>
+                        {{/each}}
+                    </div> 
+                  </div>
+                    <div class="row">
+                      <div class="col-lg-3">
+                          <img src="images/process1.png" class="img-responsive">    
+                      </div>
+                      <div class="col-lg-2">
+                            <div class="clearfix-on-row">
+                               <p class="black">${{goal}}</p>
+                               <p class="black">44%</p>
+                            </div>
+                      </div>
+                      <div class="col-lg-7">
+                          <p class="black-blur-top pull-right">{{totalLike}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp; <span>J-{{remainday createdAt}}</span></p>
+                          <p class="pull-right"><span>{{datemax}}</span></p>           
+                      </div>
+                    </div>
+                {{/each}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div> 
+        <h2>Tous les projets</h2>
+    </div>
+    {{#if comparePop}}
+        <section id="special-layout">
+            <div id="page-la-bases">
+                <div class="well-box">
+                    <div class="row">
+                        {{#each sortPopular}}
+                            {{#each getAllProList}}
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left-box row-pad">
+                            <p class="blue">{{title}}</p>
+                            <a href="/projectdetail/{{_id}}" title="Startup One Page">
+                                <img src="/upload/{{getimage image}}" class="img-responsive center-block img-title" alt="Startup One Page" title="Startup One Page" width="266"/>
+                            </a>
+                            <p class="black-small">{{shortIt description}}</p>
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    {{#each getUser ownerId}}
+                                        <p class="blue"><a href="/userinfo/{{_id}}">{{profile.username}}{{services.facebook.name}}</a></p>
+                                    {{/each}}                      
+                                </div>
+                                <div class="col-lg-5">
+                                    {{#each getcat}}
+                                        <p><a href="/listprobycat/{{_id}}">{{name}}</a></p>
+                                    {{/each}}
+                                </div> 
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <img src="images/process1.png" class="img-responsive">    
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="clearfix-on-row">
+                                       <p class="black">${{goal}}</p>
+                                       <p class="black">44%</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <p class="black-blur-top pull-right">{{totalLike}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp; <span>J-{{remainday createdAt}}</span></p>
+                                    <p class="pull-right"><span>{{datemax}}</span></p>     
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/if}}
+    {{#if compareDate}}
+        <section id="special-layout">
+            <div id="page-la-bases">
+                <div class="well-box">
+                    <div class="row">
+                        {{#each sortNews}}
+                            {{#each getFirstDate diffDaysCur}}
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left-box row-pad">
+                            <p class="blue">{{title}}</p>
+                            <a href="/projectdetail/{{_id}}" title="Startup One Page">
+                                <img src="/upload/{{getimage image}}" class="img-responsive center-block img-title" alt="Startup One Page" title="Startup One Page" width="266"/>
+                            </a>
+                            <p class="black-small">{{shortIt description}}</p>
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    {{#each getUser ownerId}}
+                                        <p class="blue"><a href="/userinfo/{{_id}}">{{profile.username}}{{services.facebook.name}}</a></p>
+                                    {{/each}}                      
+                                </div>
+                                <div class="col-lg-5">
+                                    {{#each getcat}}
+                                        <p><a href="/listprobycat/{{_id}}">{{name}}</a></p>
+                                    {{/each}}
+                                </div> 
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <img src="images/process1.png" class="img-responsive">    
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="clearfix-on-row">
+                                       <p class="black">${{goal}}</p>
+                                       <p class="black">44%</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <p class="black-blur-top pull-right">{{totalLike}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp; <span>J-{{remainday createdAt}}</span></p>
+                                    <p class="pull-right"><span>{{datemax}}</span></p>     
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/if}}
+    {{#if compareTitle}}
+        <section id="special-layout">
+            <div id="page-la-bases">
+                <div class="well-box">
+                    <div class="row">
+                        {{#each getprojectlist}}
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left-box row-pad">
+                            <p class="blue">{{title}}</p>
+                            <a href="/projectdetail/{{_id}}" title="Startup One Page">
+                                <img src="/upload/{{getimage image}}" class="img-responsive center-block img-title" alt="Startup One Page" title="Startup One Page" width="266"/>
+                            </a>
+                            <p class="black-small">{{shortIt description}}</p>
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    {{#each getUser ownerId}}
+                                        <p class="blue"><a href="/userinfo/{{_id}}">{{profile.username}}{{services.facebook.name}}</a></p>
+                                    {{/each}}                      
+                                </div>
+                                <div class="col-lg-5">
+                                    {{#each getcat}}
+                                        <p><a href="/listprobycat/{{_id}}">{{name}}</a></p>
+                                    {{/each}}
+                                </div> 
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <img src="images/process1.png" class="img-responsive">    
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="clearfix-on-row">
+                                       <p class="black">${{goal}}</p>
+                                       <p class="black">44%</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <p class="black-blur-top pull-right">{{totalLike}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp; <span>J-{{remainday createdAt}}</span></p>
+                                    <p class="pull-right"><span>{{datemax}}</span></p>      
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/if}}
+    {{#if compareGoal}}
+        <section id="special-layout">
+            <div id="page-la-bases">
+                <div class="well-box">
+                    <div class="row">
+                        {{#each sortGoal}}
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left-box row-pad">
+                            <p class="blue">{{title}}</p>
+                            <a href="/projectdetail/{{_id}}" title="Startup One Page">
+                                <img src="/upload/{{getimage image}}" class="img-responsive center-block img-title" alt="Startup One Page" title="Startup One Page" width="266"/>
+                            </a>
+                            <p class="black-small">{{shortIt description}}</p>
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    {{#each getUser ownerId}}
+                                        <p class="blue"><a href="/userinfo/{{_id}}">{{profile.username}}{{services.facebook.name}}</a></p>
+                                    {{/each}}                      
+                                </div>
+                                <div class="col-lg-5">
+                                    {{#each getcat}}
+                                        <p><a href="/listprobycat/{{_id}}">{{name}}</a></p>
+                                    {{/each}}
+                                </div> 
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <img src="images/process1.png" class="img-responsive">    
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="clearfix-on-row">
+                                       <p class="black">${{goal}}</p>
+                                       <p class="black">44%</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <p class="black-blur-top pull-right">{{totalLike}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp; <span>J-{{remainday createdAt}}</span></p>
+                                    <p class="pull-right"><span>{{datemax}}</span></p>      
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/if}}
+</template>

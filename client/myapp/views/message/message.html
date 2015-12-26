@@ -1,0 +1,148 @@
+<template name="message">
+  <div class="container">
+    {{> mainmenu}}
+  </div>
+  <div class="container">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 space-col">
+          <h2>Mailbox</h2>
+      </div>
+        <div class="cleafix"></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="page-detail">
+                    <div class="container">
+                        <div class="menu_box">
+                            <ul class="list-inline breadcam">
+                                <li class="newmessage"><a href="#"> <h4 calss="mnew">New message</h4></a></li>
+                                <li class="inbox"><a href="#"><h4 calss="min">Mailbox</h4></a></li>
+                                <li class="sent"><a href="#"><h4 calss="mout">Sent</h4></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <div class="border"></div>
+        </div>
+        {{#if template}}
+          {{> newmessage}}
+        {{/if}}
+        {{#if nexttemplate}}
+          {{> inbox}}
+        {{/if}}
+        {{#if senttemplate}}
+          {{> sent}}
+        {{/if}}
+  </div>
+</template>
+  <!-- new message -->
+   <template name="newmessage">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 space-col">
+        <div class="page-detail"> 
+          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+          </div>
+           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+              <form class="form-horizontal" role="form" method="post">
+                  <div class="form-group">
+                      <label for="name" class="col-sm-2 control-label">Object:</label>
+                      <div class="col-sm-10">
+                          <input type="text" class="form-control bd-black" id="subject" name="name" placeholder="" value="">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <textarea class="form-control bd-black" id="message" rows="10" name="message"></textarea>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <button class="btn btn-white btn-sendmessage" >Send</button>
+                          <span class="glyphicon glyphicon-text-color" aria-hidden="true"></span>
+                          <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+                          <span class="glyphicon glyphicon-trash pull-right" aria-hidden="true"></span>
+                      </div>
+                  </div>
+              </form>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+          </div>
+         </div>
+      </div>
+   </template>
+   <!-- inbox -->
+   <template name="inbox">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 space-col">
+        <div class="page-detail"> 
+          <div class="bs-example" data-example-id="bordered-table">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                    <th>
+                      <a href="#"><span  id="trash_inbox" class="glyphicon glyphicon-trash pull-right" aria-hidden="true"></span></a>
+                    </th>
+                    <th>Name</th>
+                    <th>Objetc</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+              {{#each getmessage}}
+                <tr>
+                  <td scope="row">
+                   <label>
+                    <input type="checkbox" value="{{_id}}">
+                   </label></td>
+                  {{#each getusername senderId}}
+                    <td>{{profile.username}}</td>
+                  {{/each}}
+                  <td>{{subject}}</td>
+                  <td>{{message}}</td>
+                  <td>{{date}}</td>
+                  <td><a href="/message/replymessage/{{_id}}">Reply</a></td>
+                </tr>
+              {{/each}}
+              </tbody>
+              </table>
+            </div>
+        </div>
+     </div>
+   </template>
+   <!-- sent -->
+   <template name="sent">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 space-col">
+        <div class="page-detail"> 
+          <div class="bs-example" data-example-id="bordered-table">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                    <th>
+                      <a href="#"><span  id="trash_sent" class="glyphicon glyphicon-trash pull-right" aria-hidden="true"></span></a>
+                    </th>
+                    <th>Name</th>
+                    <th>Objetc</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each getmessage}}
+                <tr>
+                  <td scope="row">
+                   <label>
+                    <input type="checkbox" value="{{_id}}">
+                   </label></td>
+                  {{#each getusername receiverId}}
+                    <td>{{profile.username}}</td>
+                  {{/each}}
+                  <td>{{subject}}</td>
+                  <td>{{message}}</td>
+                  <td>{{date}}</td>
+                  <td><a href="/message/replymessage/{{_id}}">Reply</a></td>
+                </tr>
+              {{/each}}
+              </tbody>
+              </table>
+            </div>
+        </div>
+     </div>
+   </template>

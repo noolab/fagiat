@@ -1,0 +1,151 @@
+<template name="aboutU">
+    <div class="container">
+        <div class="row">
+          <div class="col-xs-10 col-sm-10 col-lg-10 col-lg-offset-1 col-sm-offset-1 btn_tops" >
+              <h1>About you</h1>
+              <div style="margin-top: 50px">
+                <div class="col-lg-1 col-sm-2 col-xs-12">
+                  <img src="images/ico{{count}}.png">
+                </div>
+                <div class="col-lg-2 col-sm-3 col-xs-12">
+                  <button class="btn-top center-block col-lg-12 col-sm-12 col-xs-12" type="button"><b>{{getOneCatName}}</b><img src="images/2000px-Green_tick_pointed.png" style="width: 28px;height: 30px;"></button>
+                  <p class="mod_btn pull-right"><b>Modifier</b></p>
+                </div>
+                <div class="col-lg-2 col-sm-3 col-xs-12">
+                  <button class="btn-top center-block col-lg-12 col-sm-12 col-xs-12" type="button"><b>Basics</b><img src="images/2000px-Green_tick_pointed.png" style="width: 28px;height: 30px;"></button>
+                  <p class="mod_btn pull-right"><b>Modifier</b></p>
+                </div>
+                <div class="col-lg-2 col-sm-4 col-xs-12">
+                  <button class="btn-top center-block col-lg-12 col-sm-12 col-xs-12" type="button"><b>Rewards</b><img src="images/2000px-Green_tick_pointed.png" style="width: 28px;height: 30px;"></button>
+                  <p class="mod_btn pull-right"><b>Modifier</b></p>
+                </div>
+              </div>
+          </div>
+          <div class="col-xs-10 col-sm-10 col-lg-10 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1">
+            <div class="row well">
+              <div class="col-lg-3 col-sm-3 col-xs-12">
+                <h4>Photo de profil</h4>
+              </div>
+              <div class="col-lg-9 col-sm-9 col-xs-12">
+                <div class="download">
+                  Download 
+                </div>
+                <div class="" style="margin-top: 10px">
+                  <input type="file" id="upload" required class="btn btn-green-dark-square btn-small col-lg-6"><p>JPG, PNG, BMP<br/>50 Mo maximum</p>
+                </div>
+              </div>
+            </div>
+            <div class="row well">
+                <div class="col-lg-3 col-sm-3 col-xs-12">
+                  <h4>Name</h4>
+                </div>
+                <div class="col-lg-9 col-sm-9 col-xs-12">
+                  <input type="text" class="form-control name">
+                  <div style="padding-top: 15px">
+                    <p>Vous ne pouvez plus changer de nom une fois que vous avez validé votre projet.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row well">
+                <div class="col-lg-3 col-sm-3 col-xs-12">
+                  <h4>Facebook</h4>
+                </div>
+                <div class="col-lg-9 col-sm-9 col-xs-12">
+                  <div class="col-lg-2 col-sm-3 col-xs-5">
+                    <img class="img_face" src="images/facebook-round-icon.png">
+                  </div>
+                  <span class="col-xs-12 col-sm-6 col-lg-3 btn-face btn-primary">Connexion facebook</span>
+                </div>
+              </div>
+              <div class="row well">
+                <div class="col-lg-3 col-sm-3 col-xs-12">
+                  <h4>Biographie</h4>
+                </div>
+                <div class="col-lg-9 col-sm-9 col-xs-12">
+                  <textarea rows="5" cols="50" class="form-control bio"></textarea>
+                </div>
+              </div>
+              <div class="row well">
+                <div class="col-lg-3 col-sm-3 col-xs-12">
+                  <h4>Emplacement</h4>
+                </div>
+                <div class="col-lg-9 col-sm-9 col-xs-12">
+                  <input type="text" class="form-control location">
+                </div>
+              </div>
+              <div class="row well">
+                <div class="col-lg-3 col-sm-3 col-xs-12">
+                  <h4>Site web</h4>
+                      
+                </div>
+                <div class="col-lg-9 col-sm-9 col-xs-12" >
+                  <div class="col-lg-7 col-sm-6 col-xs-12" style="margin-left: -15px; margin-right: 15px">
+                    <input type="text" class="form-control site" style="width: 100%">
+                  </div>
+                  <div class="col-xs-12 col-sm-3 col-lg-5">
+                    <a href="#"><div class="col-xs-12 col-sm-12 col-lg-4 btn-green-dark-square btn-add btn-margin btn-primary">Ajouter</div></a>
+                  </div>
+
+                  <div style="padding-top: 50px">
+                     <div class="row">
+                      {{#if showpro}}
+                          {{#each showpro}}
+                              <a href="#" id="proId" class="btn btn-default btn-sm">{{site}} <span class="glyphicon glyphicon-remove">
+                              </span> </a>
+                              <input type="hidden" id="idpro" value="{{_id}}">
+                          {{/each}}
+                      {{/if}}
+                    </div>
+                    <p>Ajoutez des liens qui permettent aux contributeurs de mieux vous connaître et qui leurmontrent que vous êtes capables de réaliser votre projet. Citez par exemple votre blog, votre site Web, votre compte Twitter ou des exemples de vos travaux passés.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row well">
+                <div class="col-lg-3 col-sm-3 col-xs-12">
+                  <h4>Ajouter une vidéo</h4>
+                </div>
+                <div class="col-lg-9 col-sm-9 col-xs-12">
+                  <div class="down_vd col-lg-7 col-sm-6 col-xs-12">
+                    Download a video
+                  </div>
+                  <div class="col-lg-5 col-sm-6 col-xs-12">
+                    <span class="col-xs-12 col-sm-6 col-lg-4 btn-margin btn-primary">Ajouter</span>
+                  </div>
+                  <div style="padding-top: 50px">
+                    <p class="p_margin">Ajoutez des liens qui permettent aux contributeurs de mieux vous connaître et qui leurmontrent que vous êtes capables de réaliser votre projet. Citez par exemple votre blog, votre site Web, votre compte Twitter ou des exemples de vos travaux passés.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row well">
+                <div class="col-lg-3 col-sm-3 col-xs-12">
+                  <h4>À propos du projet</h4>
+                </div>
+                <div class="col-lg-9 col-sm-9 col-xs-12">
+                  <textarea rows="5" cols="50" class="form-control aPro"></textarea>
+                  <div style="padding-top: 15px">
+                    <p><b>Ajouter les options de textes et images etc...</b></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row well">
+                <div class="col-lg-3 col-sm-3 col-xs-12">
+                  <h4>Risques et défis</h4>
+                </div>
+                <div class="col-lg-9 col-sm-9 col-xs-12">
+                  <textarea rows="5" class="form-control risk"></textarea>
+                  <div style="padding-top: 15px">
+                    <p><b>Ajouter les options de textes et images etc...</b></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-10 col-sm-9 col-xs-12" style="margin-left: -30px">
+                <p>Important : la notion de responsabilité</p>
+                <p>The mission of each credit © actor is to win the trust of its contributors, especially if credit © creators and contributors do not personally know. It's up to you to prove that you will complete your project at right. So do not sitez hÃ © Ã highlight your qualifications and at communicating as much information as possible about your profile.</p>
+              </div>
+              <div class="col-lg-2 col-sm-3 col-xs-12">
+                <span class="col-xs-12 col-sm-12 col-lg-12 btn-green-dark-square btn-big btn-about btn-valider btn pull-right">Valider</span>
+              </div>
+            </div>
+          </div>
+        </div>
+</template>

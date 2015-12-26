@@ -1,0 +1,123 @@
+<template name="myproject">
+    <div class="container">
+        {{> mainmenu}}
+    </div>
+    <div class="container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hold">
+            <h2>Mes projets préférés</h2>
+            <p class="black mar-p-space">Nous vous enverrons un rappel 48 heures avant la fin de ces campagnes<br/>pour que vous puissiez contribuer !</p>
+        </div>
+        <div class="clearfix"></div>
+        <section class="bord-sec">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="control-ul19">
+                            <div class="sort-by-ul">
+                                <ul class="list-sort-by">
+                                    <li class="text-sort-by"><a href="">Sort by</a></li>
+                                    <li class="text-sort-by news"><a href="#">News</a></li>
+                                    <li class="text-sort-by popular"><a href="#">Popular</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="clearfix"></div>
+    {{#if compareData}}
+        {{> newspro}}
+        {{else}}
+            {{> popular}}
+    {{/if}}
+</template>
+<template name="newspro">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-11 col-md-12 col-sm-12 col-xs-12 col-lg-offset-1">
+                <div class="well-flow bord">
+                    <div class="row">
+                        {{#each sortNews}}
+                        {{#each sortedDateProjects}}
+                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 left" style="width: 230px; height: 170px; overflow: hidden;">
+                                <a href="/projectdetail/{{_id}}" title="Startup One Page">
+                                    <img src="/upload/{{getimage image}}" name="Startup One Page" title="Startup One Page" width="266">
+                                </a>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 center">
+                                <div class="padding-top-box">
+                                    <h4 class="sea">{{title}}</h4>
+                                    {{#each getUser ownerId}}
+                                        <p class="black"><a href="/userinfo/{{_id}}">{{profile.username}}{{services.facebook.name}}</a></p>
+                                    {{/each}}
+                                    <p class="description">{{shortIt description}}</p>
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <img src="images/process1.png" class="img-description">
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <p class="black">${{goal}}</p>
+                                            <p class="description">Financé à &nbsp; <b>42%</b></p>
+                                        </div>
+                                        <div class="col-lg-5">
+                                             <p class="black-blur-top pull-right{{getstatus}}  likeUnlike" aria-hidden="true" style="color:black;">{{totalLike}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp; <span>J-{{remainday createdAt}}</span></p>
+                                            <p class="pull-right"><span>{{datemax}}</span></p>
+                                            <a href="/editproject/{{_id}}"><button type="button" class="btn btn-outline btn-info btn-xs">Modify</button></a>
+                                        </div>
+                                    </div>      
+                                </div>
+                            </div>
+                        {{/each}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="popular">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-11 col-md-12 col-sm-12 col-xs-12 col-lg-offset-1">
+                <div class="well-flow bord">
+                    <div class="row">
+                        {{#each sortPopular}}
+                            {{#each getAllProList}}
+                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 left" style="width: 230px; height: 170px; overflow: hidden;">
+                                <a href="/projectdetail/{{_id}}" title="Startup One Page">
+                                    <img src="/upload/{{getimage image}}" name="Startup One Page" title="Startup One Page" width="266">
+                                </a>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 center">
+                                <div class="padding-top-box">
+                                    <h4 class="sea">{{title}}</h4>
+                                    {{#each getUser ownerId}}
+                                        <p class="black"><a href="/userinfo/{{_id}}">{{profile.username}}{{services.facebook.name}}</a></p>
+                                    {{/each}}
+                                    <p class="description">{{shortIt description}}</p>
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <img src="images/process1.png" class="img-description">
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <p class="black">${{goal}}</p>
+                                            <p class="description">Financé à &nbsp; <b>42%</b></p>
+                                        </div>
+                                        <div class="col-lg-5">
+                                             <p class="black-blur-top pull-right{{getstatus}}  likeUnlike" aria-hidden="true" style="color:black;">{{totalLike}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp; <span>J-{{remainday createdAt}}</span></p>
+                                            <p class="pull-right"><span>{{datemax}}</span></p>
+                                            <a href="/editproject/{{_id}}"><button type="button" class="btn btn-outline btn-info btn-xs">Modify</button></a>
+                                        </div>
+                                    </div>      
+                                </div>
+                            </div>
+                            {{/each}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

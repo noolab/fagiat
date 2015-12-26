@@ -1,0 +1,116 @@
+<template name="projectdonated">
+<div class="container">
+  {{> mainmenu}}
+</div>
+<section class="bord-sec">
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-12">
+      <div class="control-ul19">
+        <div class="sort-by-ul">
+            <ul class="list-sort-by">
+                <li class="text-sort-by"><a href="">Sort by</a></li>
+                <li class="text-sort-by"><a href="#">News</a></li>
+                <li class="text-sort-by"><a href="#">Popular</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+ <!-- donated project -->
+</section>
+  <div class="container">
+  	{{#each getProjectDonated}}
+      <div class="well-box">
+        <div class="row" style="padding: 15px 40px;">
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="row-inline-box">
+                <p class="blue">{{title}}</p>
+                 <a href=""><img src="/upload/{{getImage image}}" class="img-responsive img-title" width="266"></a>
+                 <p class="black-small">{{description}}</p>
+              <div class="row">
+                <div class="col-lg-7">
+                  <p>De harrystar à Tehran</p>
+                </div>
+                <div class="col-lg-5">
+                    <a href="#"><p class="sea">{{categoryName}}</p></a>
+                </div>
+              </div>
+                <div class="row">
+                  <div class="col-lg-3">
+                      <img src="images/process1.png" class="img-responsive">
+                  </div>
+                  <div class="col-lg-2">
+                        <div class="clearfix-on-row">
+                           <p class="black">${{goal}}</p>
+                           <p class="black">44%</p>
+                        </div>
+                  </div>
+                  <div class="col-lg-7">
+                      <p class="black-blur-top pull-right">{{totalLike}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp; <span>J-32</span></p>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <!-- rewards -->
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="row-inlinebox">
+            {{#each listdonated}}
+                <div class="x2">
+                  <div class="border20">
+                      <p class="blue text-center">Contribution de {{cost}}€ ou plus</p>
+                      <span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp; <span class="black-small">contributeurs</span>
+                      <h2> X {{countcontributed}}</h2>
+                  </div>
+                </div>
+            {{/each}}
+            </div>
+          </div>
+          <!-- end rewards -->
+           <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="row-inline-box">
+                <div class="x-full">
+                  <div class="border20-full">
+                      <div class="control-block20">
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <div class="20" style="margin: 0px 20px;">
+                              <h2 class="text-center">{{countContributors}}</h2>
+                              <p class="black-small">Contributeurs</p>
+                            </div>
+                          </div>
+                          <div class="col-lg-6">
+                              <h2 class="text-center">{{remainday createdAt}}</h2>
+                              <p class="black-small">Jours réstant</p>
+                          </div>
+                          <div class="col-lg-12" style="padding-top: 30px;">
+                            <h1>{{total _id}} $</h1>
+                            <p class="black">Sur {{goal}} $</p>
+                          </div>
+                          <div class="col-lg-8 col-lg-offset-4" style="padding-top: 30px; padding-bottom: 5px;">
+                            <img src="images/process.png" class="img-responsive">
+                          </div>
+                        </div>
+                      </div>
+                  </div> 
+                  <!-- border20 -->
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>  <!-- well-box -->
+      <div class="col-lg-12" style="padding: 30px 30px;">
+        <div class="col-lg-4">
+          <div class="row border-top"></div>
+        </div>
+        <div class="col-lg-4">
+          <p class="special-p">Dernière action le 23/04/2015</p>
+        </div>
+        <div class="col-lg-4">
+            <button class="btn-rd btn-oranges pull-right" type="button">Soutenir une fois de plus</button>
+        </div>
+      </div>
+    {{/each}}
+</div> <!-- container -->
+</template>

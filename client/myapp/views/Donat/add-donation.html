@@ -1,0 +1,68 @@
+<template name="startdonate">
+	<div class="container">
+		<div class="page-detail">
+			<div class="row">
+			    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			    	<div class="col-md-9 col-lg-9">
+				        <h2>{{title}}</h2>
+				        <p class="black">par Loish and 3dtotal Publishing</p>
+				    </div>
+			        <div class="col-md-3 col-lg-3">
+				        <div class="like">
+			                <a href="@"><span class="glyphicon glyphicon-heart{{getstatus}} likeUnlike" aria-hidden="true" style="color:red;">
+			                </span></a>&nbsp; <span style="font-size:20px">{{totalLike}}</span>
+			              </div> 
+			        </div>
+				</div>
+		    </div> 
+		
+	    <div class="border-center"></div>
+
+	    <div class="box-control">
+	    	<div class="box-inline">
+	    		<div class="row">
+	    			<div class="col-lg-12">
+			    		<div class="col-lg-4">
+			    			<div id="flip2">
+						        <p class="black btn-rd btn-bl-info">Simplement contribuer</p>           
+						    </div>
+						    <p class="top-description13">Vous n’attendez rien en retour et souhaitez<br>simplement soutenir le projet.</p>
+						    <div id="panel2">
+							        <input type="text" name="price" id="price" class="form-control" value=""/>
+							        <div class="space"></div>
+							        <button class="col-sm-12 btn-donate btn btn-success" type="button">Soutenir le projet</button>
+					        </div>
+			    		</div>
+						<!-- rewards -->
+			    		{{#each displayreward}}
+			    		<div class="col-lg-4">
+			    			<div id="flipB_{{_id}}" class="user-well" name="flipre">
+			    				<input type="hidden" id="reward_{{_id}}" value="{{_id}}">
+					            <p class="blue-light">Contribution de {{money}}€ ou plus</p>
+					            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp; <span>{{countContributor}} contributeurs</span><br>
+					            <p class="description-top description">{{description}}</p>
+					                <p class="description">Date de livraison estimée : {{month}} {{year}}</p>          
+					        </div>
+					        <div id="panelB" class="panelB_{{_id}}">
+			                    <select class="form-control">
+			                        <option value="$">France(+4$)</option>
+			                        <option value="$">France(+10$)</option>
+			                        <option value="$">France(+20$)</option>
+			                    </select>
+			                    <div class="space"></div>
+			                    <input type="text" class="form-control" name="price" id="price_{{_id}}" value="{{money}}" />
+			                    <input type="hidden" id="rewardId_{{_id}}" value="{{_id}}">
+			                    <div class="space"></div>
+			                    <div class="col-md-offset-3">
+			                        <button class="btn btn-success btn-donate_{{_id}} rewardClass" type="button">Soutenir le projet</button>
+			                    </div>
+			                </div>
+		    			</div>
+			    		{{/each}}
+		    		</div>
+	    		</div>
+	    	</div>
+	    </div>
+	    </div>
+    </div>
+</template>

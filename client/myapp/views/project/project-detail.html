@@ -1,0 +1,154 @@
+<template name="projectdetail">
+  <div class="container">
+      <div class="page-detail">
+          <div class=" row col-xs-12 col-sm-12 col-md-9 col-lg-9">
+            <h2>{{title}}</h2>
+            <p class="black">par Loish and 3dtotal Publishing</p>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div style="border-left:5px solid #fff;"> </div>
+              <div class="like">
+                <a href="@"><span class="glyphicon glyphicon-heart{{getstatus}} likeUnlike" aria-hidden="true" style="color:red;">
+                </span></a>&nbsp; <span style="font-size:20px">{{totalLike}}</span>
+              </div> 
+              <div class="btn">
+              <a href="#"><button class="btn-rd start_donate btn-oranges" type="button">Soutenir le projet</button></a>
+              </div>
+          </div> 
+      </div>
+     <div class="clearfix"></div>
+     <div class="space"></div>
+      <div class="page-detail">
+        <div class="border"></div>
+        <div class="kid-img">
+           <div class=" row col-xs-12 col-sm-12 col-md-8 col-lg-8">
+           <img src="/upload/{{getImage image}}" class="img-responsive img-detail" >
+          </div>
+            <span class="col-md-2">
+              <h3 class="black no-space">{{total}} $</h3>
+              <p class="balck">Sur {{goal}} $</p>
+            </span>
+            <span class="col-md-2">
+             <img src="/images/green-pro.png" class="img-responsive">
+            </span>
+        </div>
+        <div class="col-md-4">
+             <h3 class="black no-space">{{numDonator}}</h3>
+             <p class="balck">Contributeurs</p>
+        </div>
+        <div class="col-md-4">
+             <h3 class="black no-space">{{remainday createdAt}}</h3>
+             <p class="balck">Jours réstant</p>
+        </div>
+        <div class="col-md-4">
+          {{#each owner ownerId}}
+               <div class="right-pic">
+                  <a href="/userinfo/{{_id}}"><img src="/upload/{{getAvata profile.avatar}}" class="img-responsive" style="width:100px;"></a>
+               </div>
+                <div class="right-pic1">
+                  <p><a href="/userinfo/{{_id}}">{{profile.username}}</a></p>
+                  <p class="blue"><a href="/userinfo/{{_id}}">Contact</a><br><a href="/userinfo/{{_id}}">Biographie</a><br><a href="/userinfo/{{_id}}">Siteweb</a></p>
+                </div>
+            {{/each}}
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="clearfix"></div> 
+        <div class="row">
+          <p class="black">{{description}}</p>
+      </div>
+      </div>
+      <div class="clearfix"></div> 
+      <div class="space"></div>
+      <div class="page-detail">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+           <button class="btn btn-info btn-presentation" type="button">Présentation</button>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+          <button class="btn btn-black btn-news" type="button">{{countnews}} Actualité</button>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+          <button class="btn btn-black btn-comment" type="button">{{comment.length}} Commentaires</button>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+          <a href="#"><button class="btn-rd start_donate btn-oranges" type="button">Soutenir le projet</button></a>
+          </div>
+            <div class="space"></div>
+            <div class="border"></div>
+        </div>
+        <div class="space-a"></div>
+        <div class="page-detail">
+        <!-- presentation -->
+        {{#each presentation}}
+          {{#each about}}
+            <div class="row col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+                <h1>{{name}}</h1>
+                <p class="black">About pro: {{aboutProj}}</p>
+                <p class="black">Risk: {{risk}}</p>
+                <p class="black">Biography: {{biography}}</p>
+                <p class="black">location: {{location}}</p>
+                <p class="black">Site: {{#each sites}}<a href="http://{{site}}" target="_blank">{{site}}</a> &nbsp;&nbsp; {{/each}}</p>
+                <div class="space"></div>
+                <img src="/upload/{{getImage image}}" class="img-responsive img-detail">
+            </div>
+            {{/each}}
+        {{/each}}
+        <!-- news -->
+        {{#each news}}
+            <div class="row col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                <div class="row col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                    <h1>{{title}}</h1>
+                    <p class="black">{{description}}</p>
+                    <div class="space"></div>
+                    <img src="/upload/{{getNewsImage imgId}}" class="img-responsive img-detail">
+                    <div class="space-a"></div>     
+                </div>
+                <div class=" col-lg-3 col-md-3 col-sm-12 col-xs-12 bg-calen">
+                    <p class="white-cl"> Calendries</p>
+                    <div class="space"></div>
+                    <p class="black">{{date}}</p>
+                </div>
+            </div>
+        {{/each}}
+        <!-- comment -->
+        {{#each getcomment}}
+            {{> comment}}
+        {{/each}}
+        <!-- end comment -->
+        <div class="col-lg-1 col-md-1 hidden-sm hidden-xs ">
+            <img src="/images/boder3.png" class="img-responsive">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <h2 class="black">RÉCOMPENSES</h2>
+            <div class="space"></div>
+            {{#each reward _id}}
+                <div id="flipB_{{_id}}" class="user-well {{_id}}" name="flipre">
+                    <p class="blue text-center">Contribution de {{money}}€ ou plus</p>
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp; <span>{{countContributors}} contributeurs</span><br>
+                    <small>{{description}}<br/>
+                        Date de livraison estimée : {{month}} {{year}}
+                    </small>            
+                </div>
+                <div id="panelB" class="panelB_{{_id}}">
+                    <select class="form-control" id="countries">
+                      <option value="" style="display:none;color:#ddd">Select Countries</option>
+                      {{#each getcountries}}
+                        <option value="{{_id}}">{{name}}</option>
+                      {{/each}}
+                    </select>
+                    <div class="space"></div>
+                    <input type="text" class="form-control" name="price" id="price_{{_id}}" value="{{money}}" />
+                    <input type="hidden" id="reward_{{_id}}" value="{{_id}}"> 
+                    <input type="hidden" id="proId_{{_id}}" value="{{proId}}">
+                    <div class="space"></div>
+                    <div class="col-md-offset-3">
+                        <button class="btn btn-success btn-donate_{{_id}}" id="paydonate" type="button">Soutenir le projet</button>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+       </div>
+    </div>
+    </div>
+</template>

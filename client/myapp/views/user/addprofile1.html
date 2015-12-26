@@ -1,0 +1,60 @@
+<template name="addprofile1">
+	
+<div class="container">
+	<h1>Manage Profile</h1>
+	  <p>Manage all relavant information of your own project:</p>
+	  <div class="row">
+	  <h2>Add</h2><hr/>
+	  <form role="form" class="form-horizontal">
+		    <div class="form-group">
+		      <div class="col-xs-12">
+		        <label for="title">Email</label>\
+		        	<input class="form-control" id="email" name="email" type="email" value="{{getemail}}">
+		      </div>	 
+		    </div>
+	    <div class="form-group">
+	      <div class="col-xs-12">
+	        <label for="title">Username</label>
+	        <input class="form-control" id="username" name="username" type="text" 
+	        value="{{getuser}}">
+	      </div>	 
+	    </div>
+	    <div class="form-group">
+	      <div class="col-xs-12">
+	        <label for="file">Image</label>
+	        <input class="form-control" id="upload" type="file">
+	        <input type="text" id="currentImage" value="{{getavatar}}">
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <div class="col-xs-12">
+	        <button type="button" class="btn btn-success btn-lg">Facebook Login</button>
+	        <button type="button" class="btn btn-primary btn-lg">Disconnect</button>
+	      </div>	 
+	    </div>
+	    <div class="form-group">
+	    <h3>Change your password account</h3>
+	    <p id="form-messages"></p>
+	      <div class="col-xs-12">
+	        <label for="title">Current Password</label>
+	        <input class="form-control" id="password" name="password" type="password">
+	      </div>
+	      <div class="col-xs-12">
+	        <label for="title">New Password</label>
+	        <input class="form-control" id="newpassword" name="newpassword" type="password">
+	      </div>
+	      <div class="col-xs-12">
+	        <label for="title">Confirm Password</label>
+	        <input class="form-control" id="confirmpassword" name="confirmpassword" type="password">
+	      </div><br/>
+	      <button type="button" id="change" class="btn btn-primary btn-lg">Change</button>	 
+	    </div>
+	    <div class="form-group pull-right">
+	      <div class="col-xs-12">
+	        <button type="button" id="addprofile" class="btn btn-primary btn-lg">Finish</button>
+	      </div>	 
+	    </div>
+	</form>
+	</div>
+</div>
+</template>

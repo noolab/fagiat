@@ -1,0 +1,27 @@
+<template name="test">
+	<div class="container">
+		<h1>Teamplate For Test</h1>
+		<ul>
+		{{#each gettest}}
+			<li>Name :{{name}}</li>
+		{{/each}}
+		</ul>
+		<div class="panel-body">
+			<button id="first" type="button" class="btn btn-default btn-circle">
+				<i>1</i>
+            </button>
+            <button id="second"  type="button" class="btn btn-default btn-circle">
+				<i>2</i>
+            </button>
+            <button id="third"  type="button" class="btn btn-default btn-circle">
+				<i>3</i>
+            </button>
+		</div>
+		<div class="row">
+		<button id="alert"  type="button" class="btn btn-default btn-circle"><i>Salert</i>
+            </button>
+		<h1>Donation Maxvalue:</h1>
+			{{#each getmax}}<h4>{{title}}</h4><b style="color:red">{{goal}}</b>{{/each}}
+		</div>
+	</div>
+</template>

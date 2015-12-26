@@ -1,0 +1,57 @@
+<template name="edituser"> 
+{{#if isInRole 'Admin'}}
+    <div class="container"> 
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Edit Users</h1>
+            </div>
+        </div>    
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Edit User
+                        </div>
+
+                        <div class="panel-body">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label>username</label>
+                                    <input class="form-control" name="username" id="username" value="{{profile.username}}">
+                                
+                                </div> 
+                                {{#each emails}}
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    
+                                    <input class="form-control" name="email" id="email" value="{{address}}">
+                                    
+                                </div> 
+                                {{/each}}
+                                <div class="form-group">
+                                     <label>Permission</label>
+                                    <select name="language" id="mySelect" class="form-control">
+                                        <option value="{{name}}" style="display:none">{{position roles}}</option>
+                                        {{#each displayuser}}
+                                             <option value="{{name}}">{{name}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div> 
+                                <button type="submit" id="edituser" class="btn btn-default">Edit User</button>
+                                <button type="reset" class="btn btn-default">Close</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    {{else}}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="page-header" style="color:#ddd">
+                        !!!Page Not Found No Permission
+                    </h2>
+                </div>
+            </div>
+        </div>
+    {{/if}} 
+</template>

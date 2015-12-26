@@ -1,0 +1,68 @@
+<template name="comment">
+    <div class="row col-lg-7 col-md-7 col-sm-12 col-xs-12">
+ <!-- {{#if currentUser}}
+           {{else}} -->
+        <div style="text-align: center;">
+            <p class="black">Vous devez être inscrit pour laisser un cmmentaire</p>
+            <div class="row">
+                  ou
+                <button type="button" class="btn btn-sms-login btn-oranges"><a href="#">se connecter</a></button>
+            </div>
+        </div>
+     <!-- {{/if}} -->
+    </div>
+    <div class="row col-lg-7 col-md-7 col-sm-12 col-xs-12">
+        <div class="row padall">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 welles">
+                <p>Picture</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10 padding: text">
+                <div class="clearfix">
+                    <div class="pull-left">
+                        <p class="black"> Name</p>
+                    </div>
+                    <div class="pull-right">
+                        il y a quelques minutes
+                    </div>
+                </div>
+            </div>
+            {{#if currentUser}}
+            <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                <input rows="1"  type="text" placeholder="Texte commentaire...." id="text" class="area" style="width:50%">
+                <button id="post" type="button" class="btn btn-info btn-xs">Post</button>
+            </div>
+            {{/if}}
+            <div class="pull-right">
+                <b id="show">Meilleurs commentaires</b>
+                <i class="fa fa-angle-down"></i>
+            </div>
+        </div><!-- end padall -->
+        <hr class="border-top">
+        <div id="show-text">
+        {{#each getcomment}}
+            {{#each comment}}
+                {{#each getuser userId}}
+                <div class="row padall">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 welles">
+                        <p><img src="/upload/{{getavatar profile.avatar}}" class="img-circle" width="50" height="50" /></p>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10 padding: text">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <p class="black">{{profile.username}}</p>
+                            </div>
+                            <div class="pull-right">
+                                {{passday ../date}} minute ago
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                        <p>{{../text}}</p>
+                    </div>
+                </div>
+                {{/each}}
+            {{/each}}
+        {{/each}}
+        </div>
+    </div>
+</template>

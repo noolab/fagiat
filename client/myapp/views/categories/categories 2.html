@@ -1,0 +1,37 @@
+<template name="categories">
+<div class="container" style="margin-top: 55px;">
+  <div id="page-category">
+    <h1>To start my project I selected a category</h1>
+          <div class="wrapper-category">
+                <div class="row-num">
+
+                    <ul class="nav nav-tabs row-inline inline">
+                    {{#each getcatname}}
+                      <li><a href="" class="icon{{count}} cat">{{name}}</a></li>
+                      <!-- <li><a href="" class="icon2">Musique</a></li>
+                      <li><a href="" class="icon3">Theater</a></li>
+                      <li><a href="" class="icon4">Dance</a></li>
+                      <li><a href="" class="icon5">Journalist</a></li>
+                      <li><a href="" class="icon6">Gastronomie</a></li>
+                      <li><a href="" class="icon7">Edition</a></li>
+                      <li class=""><a href="" class="icon8">Mode</a></li> -->
+                      {{/each}}
+                    </ul> <!-- row -->
+                </div>
+               <div class="row-num2">
+                  <ul class="nav nav-tabs row-inline inline">
+                  {{#each getCateg}}
+                         <li class=""><a href="" class="icon{{count}} cat">{{name}}</a></li>
+                         <!-- <li class=""><a href="" class="icon10">Technologie</a></li>
+                         <li class=""><a href="" class="icon11">Photographe</a></li>
+                         <li class=""><a href="" class="icon12">Cinema and Video</a></li>
+                         <li class=""><a href="" class="icon13">Art</a></li>
+                         <li class=""><a href="" class="icon14">Artisanat</a></li>
+                         <li class=""><a href="" class="icon15">Design</a></li> -->
+                         {{/each}}
+                  </ul>
+               </div>  
+          </div><!-- wrapper-category -->
+  </div> 
+</div>
+</template>

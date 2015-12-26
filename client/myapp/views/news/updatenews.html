@@ -1,0 +1,55 @@
+<template name="updatenews">
+
+	<hr/>
+<div class="container">
+	<h1>Update News</h1>
+	  <p>Manage all relavant information of your own project:</p>
+	  <div class="row">
+	  <form role="form" class="form-horizontal">
+	  	<div class="form-group">
+	  	  <div class="col-xs-12">
+		  <label for="project">Project</label>
+		  <select class="form-control" id="projects">
+		 	{{#each getproject projectId}}
+		  	<option style="display:none;" value="{{_id}}">{{title}}</option>
+		  	{{/each}}
+		  	{{#each projects}}
+		    <option value="{{_id}}">{{title}}</option>
+		    {{/each}}
+		  </select>
+		  </div>
+		</div>
+	    <div class="form-group">
+	      <div class="col-xs-12">
+	        <label for="title">Title</label>
+	        <input class="form-control" id="title" type="text" value="{{title}}">
+	      </div>	 
+	    </div>
+	    <div class="form-group">
+	      <div class="col-xs-12">
+	        <label for="file">Image</label>
+	        <input class="form-control" id="upload" type="file">
+	        <input type="text" id="currentImage" value="{{imgId}}">
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      	<div class="col-xs-12">
+			    <div class="input-group datetimepicker">
+			    	
+				    <span class="input-group-addon"><i class=" fa fa-calendar"></i></span>
+				
+				    <input class="set-due-date form-control" id ="date" type="text" value="{{date}}"/>
+				 </div>
+		  	</div>
+		 </div>
+	    <div class="form-group">
+	      <div class="col-xs-12">
+		  <label for="description">Description:</label>
+		  <textarea class="form-control" rows="5" id="description" value="{{description}}"></textarea>
+		  </div>
+		</div>
+		<button type="button" id="updatenews" class="btn btn-default">Update</button>	
+	</form>
+	</div>
+</div>
+</template>

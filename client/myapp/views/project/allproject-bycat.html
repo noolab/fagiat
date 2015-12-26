@@ -1,0 +1,47 @@
+<template name="listprobycat">
+    <section id="special-layout">
+        <div id="page-la-bases">
+            <div class="well-box">
+                <div class="row">
+                    {{#each getprojectlist}}
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left-box row-pad">
+                        <p class="blue">{{title}}</p>
+                        <a href="/projectdetail/{{_id}}" title="Startup One Page">
+                            <img src="/upload/{{getimage image}}" class="img-responsive center-block img-title" alt="Startup One Page" title="Startup One Page" width="266"/>
+                        </a>
+                        <p class="black-small">{{shortIt description}}</p>
+                        <!-- <p>{{createdAt}}</p> -->
+                        <div class="row">
+                            <div class="col-lg-7">
+                                {{#each getUser ownerId}}
+                                    <p class="blue"><a href="/userinfo/{{_id}}">{{profile.username}}{{services.facebook.name}}</a></p>
+                                {{/each}}                      
+                            </div>
+                            <div class="col-lg-5">
+                                {{#each getcat}}
+                                    <p><a href="/listprobycat/{{_id}}">{{name}}</a></p>
+                                {{/each}}
+                            </div> 
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="images/process1.png" class="img-responsive">    
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="clearfix-on-row">
+                                   <p class="black">${{goal}}</p>
+                                   <p class="black">44%</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <p class="black-blur-top pull-right">{{totalLike}} <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp; <span>J-{{remainday createdAt}}</span></p>
+                                <p class="pull-right"><span>{{datemax}}</span></p>      
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

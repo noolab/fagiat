@@ -1,0 +1,170 @@
+<template name="editproject">
+    {{#if currentUser}}
+    <div class="container">
+        <div id="page-les-bases">
+            <h1>Les Bases</h1>
+        	<div class="row">
+        		<div class="col-lg-1 col-sm-2 col-xs-12">
+                      <img src="images/icon2face.png">
+                </div>
+        		<div class="col-lg-2 col-sm-3 col-xs-12">
+        		    <button class="btn-top center-block col-lg-12 col-sm-12 col-xs-12" type="button"><b>theater</b><img src="images/2000px-Green_tick_pointed.png" style="width: 28px;height: 30px;"></button>
+        		    <p class="mod_btn pull-right"><span class="modif">Modifier</span></p>
+        		</div>
+        		<div class="col-lg-2 col-sm-3 col-xs-12">
+        		    <button class="btn-top center-block col-lg-12 col-sm-12 col-xs-12" type="button"><b>Basics</b><img src="images/2000px-Green_tick_pointed.png" style="width: 28px;height: 30px;"></button>
+        		    <p class="mod_btn pull-right"><span class="modif">Modifier</span></p>
+        		</div>
+        		<div class="col-lg-2 col-sm-4 col-xs-12">
+        		    <button class="btn-top center-block col-lg-12 col-sm-12 col-xs-12" type="button"><b>Rewards</b><img src="images/2000px-Green_tick_pointed.png" style="width: 28px;height: 30px;"></button>
+        		    <p class="mod_btn pull-right"><span class="modif">Modifier</span></p>
+        		</div>
+            </div>
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Catégories</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <div class="col-lg-8">
+                            <select class="form-control" id="categories" name="categories" required>
+                                {{#each currentcat}}
+                                    <option value="{{_id}}" style="display:none">{{name}}</option>
+                                {{/each}}
+                                {{#each getcatname}}
+                                    <option value="{{_id}}">{{name}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Titre du projet</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <div class="col-lg-8">
+                            <input class="form-control " name="title" id="title" value="{{title}}" required>
+                            <div class="top-description">
+                                <p class="description">The title and the introductory text of your <br/> project should be simple, accurate and impactful</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Image du projet</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <p class="title">Choisissez un fichier</p>
+                        <p class="description">
+                            Veuillez sélectionner une image sur votre ordinateur.
+                            <br>Cette image sera l'image principale associée à votre projet. Choisissez-la bien !
+                            <br>JPEG, PNG, GIF ou BMP • 50 Mo maximum
+                            <br>Au moins 1024 x 768 pixels • format 4:3
+                        </p>
+                        <input type="file" id="upload" required class="btn btn-green-dark-square btn-small col-lg-4">
+                        <input type="hidden" id="oldimage" value="{{image}}">
+                    </div>
+                </div>
+            </div>
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Présentation courte</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <div class="row col-lg-8">
+                            <textarea class="form-control" rows="3" name="description" id="description" value="{{description}}" required></textarea>
+                            <div class="top-description">
+                                <p class="description">Soyez simple et précis.<br>Comment décririez-vous votre projet en un seul Tweet ?</p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Lieu</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <div class=" row col-lg-5">
+                            <input class="form-control " name="location" id="location" value="{{location}}" required>
+                        </div>                        
+                    </div>
+                </div>
+            </div>        
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Durée<br>de la campagne</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <div class="row col-lg-5">
+                            <div class="input-group datetimepicker">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                <input class="set-due-date form-control" type="text" id="datemax" value="{{datemax}}" required/>
+                            </div>
+                            <div class="top-description">
+                                <p class="description">De 1 à 60 jours maximum</p>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Objectif<br>de financement</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <input class="form-control" name="amount" id="amount" value="{{goal}}" required>
+                            </div>
+                            <div class="col-lg-2">
+                                <select class="form-control" disabled>
+                                    <option value="$">$</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="top-description">
+                            <p class="description">Votre objectif de financement correspond au montant minimum dont vous avez besoin 
+                                <br>pour mener à bien votre projet et produire toutes les récompenses (sans oublier les frais
+                                <br>pour mener à bien votre projet et produire toutes les récompenses (sans oublier les fraisde port !). Comme le financement participatif Kickstarter fonctionne sur le principe du «
+                                <br>tout ou rien », vous pouvez récolter une somme supérieure à votre objectif, mais jamais
+                                <br>inférieure. Une fois votre projet lancé, vous ne pouvez plus modifier votre objectif de
+                                <br>financement.
+                            </p>
+                            <p class="description">Si votre projet est financé intégralement, les frais suivants sont prélevés sur le total des
+                                <br>fonds à collecter : 5 % de frais Kickstarter + les frais de traitement des paiements (entre 3 
+                                <br>% et 5 %). Si votre projet n'est pas intégralement financé, il n'y a pas de frais.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btn-validate">
+                <div class="row">
+                    <button type="submit" id="update" class="pull-right btn btn-green-dark-square btn-big col-lg-2">Validate</button>
+                </div>
+            </div>
+        </div> 
+    </div>
+    {{else}}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="page-header" style="color:#ddd">
+                        !!!Page Not Found No Permission
+                    </h2>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+</template>

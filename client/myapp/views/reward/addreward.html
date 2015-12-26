@@ -1,0 +1,151 @@
+<template name="addreward">
+    <div class="container">
+        <div id="page-les-bases">
+            <h1>Rewards contributeurs</h1>
+            <h3>{{rewarid}}</h3>
+            <div class="row">
+                <div class="col-lg-1 col-sm-2 col-xs-12">
+                      <img src="/images/ico{{count}}.png">
+                </div>
+                <div class="col-lg-2 col-sm-3 col-xs-12">
+                    <button class="btn-top center-block col-lg-12 col-sm-12 col-xs-12" type="button"><b>{{getOneCatName}}</b><img src="images/2000px-Green_tick_pointed.png" style="width: 28px;height: 30px;"></button>
+                    <p class="mod_btn pull-right"><span class="modif">Modifier</span></p>
+                </div>
+                <div class="col-lg-2 col-sm-3 col-xs-12">
+                    <button class="btn-top center-block col-lg-12 col-sm-12 col-xs-12" type="button"><b>Basics</b><img src="images/2000px-Green_tick_pointed.png" style="width: 28px;height: 30px;"></button>
+                    <p class="mod_btn pull-right"><span class="modif">Modifier</span></p>
+                </div>
+            </div>
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 left">
+                        <h4>Récompense n°1</h4>
+                        <p class="description">
+                          Lorsque les contributeurs participent<br>
+                          monétairement ils peuvent<br>
+                          recevoir des récompenses pour<br>
+                          les encourager.<br>
+                          Proposer plusieurs récompenses<br>
+                          avec des niveau supèrieur.<br>
+                          Plus la participation monétaire est<br>
+                          grande plus la récompense est<br>
+                          grande.
+                        </p>
+                         <p class="description">
+                          Quelques exemples : un exemplaire<br>
+                          de votre produit, une expérience<br>
+                          unique ou une édition<br>
+                          limitée.
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 right">
+                        <div class="row row-spacing-bottom">
+                            <div class="col-lg-3">
+                                <p class="title">Pour un montant de</p>
+                            </div>
+                             <label id="error_money"></label>
+                            <div class="col-lg-3">
+                                <input type="text" min="0" class="form-control " name="money" id="money" value="" required>
+                            </div>
+                        </div>
+                        <div class="row row-spacing-bottom">
+                            <div class="col-lg-3">
+                                <p class="title">Le contributeur aura<br><small>( Description )</small></p>
+                            </div>
+                            <div class="col-lg-6">
+                                <textarea class="form-control" rows="5" name="description" id="description" required></textarea>
+                            </div>
+                        </div>
+                        <div class="row row-spacing-bottom">
+                            <div class="col-lg-3">
+                                <p class="title">Livraison prévue</p>
+                            </div>
+                            <div class="col-lg-3">
+                                <select class="form-control" id="month">
+                                    <option value="Mois">Mois</option>
+                                    <option value="Janvier">Janvier</option>
+                                    <option value="Février">Février</option>
+                                    <option value="Mars">Mars</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <select class="form-control" id="year">
+                                    <option value="Année">Année</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row row-spacing-bottom">
+                            <div class="col-lg-3">
+                                <p class="title">Information et<br>livraison</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="delivery">
+                                    <option value="Séléctionner une option">Séléctionner une option</option>
+                                    <option value="Leg spin">Leg spin</option>
+                                    <option value="Off spin">Off spin</option>
+                                    <option value="Fast bowling">Fast bowling</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row row-spacing-bottom">
+                            <div class="col-lg-1 icon-user">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            </div>
+                            <div class="col-lg-5">
+                                <p class="title">Limiter la<br>quantité de récompenses n°1</p>
+                            </div>
+                            <div class="col-lg-1 icon-user">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            </div>
+                            <label id="error_stock"></label> 
+                            <div class="col-lg-2">
+                                <input type="text" min="0" class="form-control" value="" id="stock">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="well-full">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 left">
+                        <div class="btn btn-bg-dark-square btn-big col-lg-12">
+                            Ajouter une récompense
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 center">
+                        <div class="btn btn-bg-dark-square btn-big col-lg-12">
+                            <select class="form-control">
+                                <option value="$">Dupliquer une récompense</option>
+                                {{#each getoldreward}}
+                                    <option value="{{money}}">{{money}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 right">
+                        <div class="pull-right btn btn-green-dark-square btn-big col-lg-5" id="valider">
+                            Valider
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="well-full">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 left">
+                        <p class="description-red">Interdictions</p>
+                        <p class="description">
+                          Les récompenses qui ne sont pas produites par le créateur ou directement issus du projet<br>
+                          Les incitations financières<br>
+                          Les tombolas, loteries ou concours publicitaires<br>
+                          Les bons, coupons, remises et cartes cadeaux échangeables contre des espèces<br>
+                          Pour plus d'informations, consultez notre liste des articles et sujets interdits
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</template>
