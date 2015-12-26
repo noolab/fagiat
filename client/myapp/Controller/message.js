@@ -41,15 +41,25 @@ Template.message.events({
         Session.set('template',"sent");
     }
 });
+//Template.newmessage.helpers{(
+	//filterUser: function(){
+		//return Session.get('FILTER_USER');
+	//}
+//)};
+Template.newmessage.helpers({
+	filterUser: function(){
+		return Session.get('FILTER_USER');
+	}
+});
 Template.newmessage.events({
-	"click .btn-sendmessage":function(e){
+	"submit form":function(e){
 		e.preventDefault();
-		var receiverId = Session.get('projectOwnerId');
+		var username = $('#username').val();
 		var subject = $('#subject').val();
-		var textmessage = $('#message').val();
+		var textmessage = e.target.message.value;
+		alert(textmessage);
 		var senderId = Meteor.userId();
 		var parent = 0;
-			
 		if(subject == ""){
 			$('#subject').focus();
 			return false;
@@ -58,12 +68,27 @@ Template.newmessage.events({
 				$('#message').focus();
 				return false;
 			}else{
-				Meteor.call('addmessage',subject,textmessage,receiverId,senderId,parent);
+				Meteor.call('addmessage',subject,textmessage,username,senderId,parent, function(err){
+					if(err){
+						console.log(err.reason);
+					}else{
+						alert("Message has been insert");
+					}
+				});
 			}
 		}
 		
-	}
+	},
+	"keyup .input-user": function(e) {
+		var key = $(e.currentTarget).val();
+    	var data = Meteor.users.find({'profile.username':{$regex: new RegExp(key,"i")}});
+    	if( data ) var result = {result:true,data:data};
+    	else var result = {result:false};
+    	Session.set('FILTER_USER', result);
+  	}
 });
+
+
 //================== Inbox =====================
 Template.inbox.helpers({
 	getmessage:function(){

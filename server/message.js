@@ -1,9 +1,9 @@
 Meteor.methods({
-	addmessage:function(subject,textmessage,receiverId,senderId,parent){
+	addmessage:function(subject,textmessage,username,senderId,parent){
 		var attr = {
 			subject:subject,
 			message:textmessage,
-			receiverId:receiverId,
+			username:username,
 			senderId:senderId,
 			parent:parent,
 			status: 1,
