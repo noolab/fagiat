@@ -695,7 +695,16 @@ Template.listprobycat.helpers({
     }
 });
 //======================== Project ===================================//
-
+Session.set('limit',4);
+Template.project.onCreated(function() {
+    $(window).on('scroll', function(e) {
+       if($(window).scrollTop() == $(document).height() - $(window).height()) {
+            var oldLimit=Session.get('limit');
+            oldLimit+=4;
+            Session.set('limit',oldLimit);
+        }
+    });
+});
 Template.project.helpers({
     projectDiscover:function(){
         return projectlist.find({catId:{$not:null}},{limit:1});
@@ -790,10 +799,21 @@ Template.project.helpers({
         var catID = Session.get('catId');
         var param = Session.get('param');
         if(param == ""){
-            return project.find({category:catID});
+            return project.find({category:catID},{limit:4});
         }
         if(param == "title"){
             return project.find({category:catID},{sort:{title:1}});
+        }
+    },
+    moreProjects:function(){
+        var catID = Session.get('catId');
+        var param = Session.get('param');
+        if(param == ""){
+            var items = project.find({category:catID},{limit:Session.get('limit')}).fetch();
+            if(items.length>0)
+                return items.slice(4,items.length);
+            else
+                return null;
         }
     },
     sortGoal:function(){
@@ -934,6 +954,14 @@ Template.project.helpers({
     compareGoal:function(){
         var param = Session.get('param');
         if(param == "goal"){
+            return true;
+        }else{
+            return false;
+        }
+    },
+    compare:function(){
+        var param = Session.get('param');
+        if(param == ""){
             return true;
         }else{
             return false;
